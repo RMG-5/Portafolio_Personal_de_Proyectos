@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Página de documentación técnica SASS (Syntactically Awesome Stylesheet / Hoja de estilo sintácticamente impresionante)"/>
+        <title>SASS (Syntactically Awesome Stylesheet)</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <body>
+<!--  AREA DE NAVEGACION.  -->    
+    <nav id="navbar">
+        <header><h1>SASS Documentación</h1></header>
+        <div id="men-pan-peq">
+            <ul>        
+                <li><a href="#Introducci&oacute;n" class="nav-link">Introducci&oacute;n</a></li>
+                <li><a href="#Instalaci&oacute;n" class="nav-link">Instalaci&oacute;n</a></li>
+                <li><a href="#Variables" class="nav-link">Variables</a></li>
+                <li><a href="#Reglas_y_propiedades_de_anidaci&oacute;n" class="nav-link">Reglas y propiedades de anidaci&oacute;n</a></li>
+                <li><a href="#Sass_@import_y_parciales" class="nav-link">Sass @import y parciales</a></li>
+                <li><a href="#Sass_@mixin_y_@include" class="nav-link">Sass @mixin y @include</a></li>
+                <li><a href="#Sass_@extend_y_Herencia" class="nav-link">Sass @extend y Herencia</a></li>                
+                <li class="navbar-desple"><a href="#Funciones_Sass" class="nav-link">Funciones Sass</a>
+                    <div class="con-navbar-desple">                        
+                        <a href="#Funciones_de_cadena" class="nav-link-desple">Funciones de cadena</a>
+                        <a href="#Funciones_num&eacute;ricas" class="nav-link-desple">Funciones num&eacute;ricas</a>   
+                        <a href="#Funciones_de_lista" class="nav-link-desple">Funciones de lista</a>
+                        <a href="#Funciones_de_mapa" class="nav-link-desple">Funciones de mapa</a>
+                        <a href="#Funciones_de_selector" class="nav-link-desple">Funciones de selector</a>
+                        <a href="#Funciones_de_introspecci&oacute;n" class="nav-link-desple">Funciones de introspecci&oacute;n</a>
+                        <a href="#Funciones_de_color" class="nav-link-desple">Funciones de color</a>                
+                    </div>
+                </li> 
+                <li><a href="#Referencia" class="nav-link">Referencia</a></li>         
+            </ul>
+        </div>
+    </nav>
+<!--  AREA DE EXPOSICIÓN.  -->
+    <main id="main-doc">
+        <section id="Introducci&oacute;n" class="main-section">
+            <header><h2>Introducci&oacute;n</h2></header>
+                <article>
+                    <h3>Lo que ya deberías saber</h3>
+                        <p>Antes de continuar, debe tener una comprensión básica de lo siguiente:</p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    <h3>¿Qué es Sass?</h3>
+                        <ul>
+                            <li><span class="rojo"><strong>Sass</strong></span> significa <span class="rojo"><strong>S</strong></span>yntactically 
+                                <span class="rojo"><strong>A</strong></span>wesome <span class="rojo"><strong>S</strong></span>tyle<span class="rojo"><strong>s</strong></span>heet 
+                                (Hoja de estilo sintácticamente impresionante)</li>
+                            <li>Sass es una extensión de CSS</li>
+                            <li>Sass es un preprocesador de CSS</li>
+                            <li>Sass es completamente compatible con todas las versiones de CSS</li>
+                            <li>Sass reduce la repetición de CSS y, por lo tanto, ahorra tiempo</li>
+                            <li>Sass fue diseñado por Hampton Catlin y desarrollado por Natalie Weizenbaum en 2006</li>
+                            <li>Sass es gratis para descargar y usar</li>
+                        </ul>
+                    <h3>¿Por qué usar Sass?</h3>
+                        <p>Las hojas de estilo son cada vez más grandes, más complejas y más difíciles de mantener. Aquí es donde un 
+                            preprocesador de CSS puede ayudar.</p>
+                        <p>Sass le permite usar funciones que no existen en CSS, como variables, reglas anidadas, mezclas, importaciones, 
+                            herencia, funciones integradas y otras cosas.</p>
+                    <h3>Un ejemplo simple de por qué Sass es útil</h3>
+                        <p>Digamos que tenemos un sitio web con cuatro colores principales:</p>
+                        <p id="color-01">#000000</p>
+                        <p id="color-02">#555555</p>
+                        <p id="color-03">#AAAAAA</p>
+                        <p id="color-04">#FFFFFF</p>
+                        <p>Entonces, ¿cuántas veces necesita escribir esos valores HEX? Muchas veces. ¿Y las variaciones de los mismos 
+                            colores?</p>
+                        <p>En lugar de escribir los valores anteriores muchas veces, puede usar Sass y escribir esto:</p>
+                            <code> 
+                                /* definir variables para los colores primarios */
+                                $primary_1: #000000;
+                                $primary_2: #555555;
+                                $primary_3: #AAAAAA;
+                                $primary_4: #FFFFFF;
+
+                                /* usar las variables */
+                                .nav {
+                                    background-color: $primary_1;
+                                } 
+                              
+                                .main {
+                                    background-color: $primary_2;
+                                }
+                              
+                                .aside {
+                                    background-color: $primary_3;
+                                }
+
+                                .footer {
+                                    background-color: $primary_4;
+                                }
+                            </code>   
+                        <p>Entonces, cuando usa Sass y el color primario cambia, solo necesita cambiarlo en un lugar.</p>
+                    <h3>¿Cómo funciona Sass?</h3>
+                        <p>Un navegador no entiende el código Sass. Por lo tanto, necesitará un preprocesador Sass para convertir el código 
+                            Sass en CSS estándar.</p>
+                        <p>Este proceso se denomina transpilado. Por lo tanto, debe proporcionarle a un transpilador (algún tipo de programa) 
+                            un código Sass y luego recuperar un código CSS.</p>
+                        <p class="comentario"><strong>Consejo:</strong> Transpilar es un término para tomar un código fuente escrito en un 
+                            idioma y transformarlo/traducirlo a otro idioma.</p>
+                    <h3>Tipo de archivo Sass</h3>
+                        <p>Los archivos Sass tienen la extensión de archivo <em>".scss"</em>.</p>
+                    <h3>Comentarios Sass</h3>
+                        <p>Sass admite comentarios CSS estándar <span class="rojo">/* comentario */</span> y, además, admite comentarios 
+                            en línea <span class="rojo">// comentario</span>.</p>
+                </article>
+        </section>
+        <hr/>
+        <section id="Instalaci&oacute;n" class="main-section">
+            <header><h2>Instalaci&oacute;n</h2></header>
+                <article>
+                    <h3>Requisitos del sistema para Sass</h3>
+                        <ul>
+                            <li><strong>Sistema operativo:</strong> Sass es independiente de la plataforma</li>
+                            <li><strong>Compatibilidad con navegador:</strong> Sass funciona en Edge/IE (desde IE 8), Firefox, Chrome, Safari, 
+                                Opera</li>
+                            <li><strong>Lenguaje de programación:</strong> Sass está basado en Ruby</li>
+                        </ul>
+                    <h3>Sitio web oficial de Sass</h3>
+                        <p>Lea más sobre Sass en su sitio web oficial: <a target="_blank" href="https://sass-lang.com/">Sitio web SASS</a></p>
+                    <h3>Instalar Sass</h3>
+                        <p>Hay varias formas de instalar Sass en su sistema. Hay muchas aplicaciones que lo pondrán en funcionamiento con Sass 
+                            en unos minutos para Mac, Windows y Linux. Algunos de estos son gratuitos, pero otros son aplicaciones de paga.</p>
+                        <p>Puede leer más sobre ellos aquí: <a target="_blank" href="https://sass-lang.com/install">Instalar SASS</a></p>
+                </article>
+        </section>
+        <hr/>
+        <section id="Variables" class="main-section">
+            <header><h2>Variables</h2></header>
+                <article>
+                        <p>Las variables son una forma de almacenar información que puede reutilizar más adelante.</p>
+                        <p>Con Sass, puede almacenar información en variables, como:</p>
+                        <ul>
+                            <li>strings</li>
+                            <li>numbers</li>
+                            <li>colors</li>
+                            <li>booleans</li>
+                            <li>lists</li>
+                            <li>nulls</li>
+                        </ul>
+                        <p>Sass usa el símbolo <span class="rojo">$</span>, seguido de un nombre, para declarar variables:</p>
+                        <p>Sintaxis de la variable Sass:</p>
+                            <code>
+                                $nombre_variable: valor;
+                            </code>
+                        <p>El siguiente ejemplo declara 4 variables llamadas mi_fuente, mi_color, mi_tamaño_fuente y mi_ancho. Después de declarar las 
+                            variables, puede usar las variables donde quiera:</p>
+                            <code>
+                                $mi_fuente: Helvetica, sans-serif;
+                                $mi_color: red;
+                                $mi_tamaño_fuente: 18px;
+                                $mi_ancho: 680px;
+
+                                body {
+                                    font-family: $mi_fuente;
+                                    font-size: $mi_tamaño_fuente;
+                                    color: $mi_color;
+                                }
+
+                                div {
+                                    width: $mi_ancho;
+                                }
+                            </code>
+                        <p>Entonces, cuando se transpila el archivo Sass, toma las variables (mi_fuente, mi_color, etc.) y genera un CSS normal 
+                            con los valores de las variables colocados en el CSS, así:</p>
+                            <code>
+                                body {
+                                    font-family: Helvetica, sans-serif;
+                                    font-size: 18px;
+                                    color: red;
+                                }
+                                  
+                                div {
+                                    width: 680px;
+                                }
+                            </code>
+                    <h3>Alcance variable Sass</h3>
+                        <p>Las variables de Sass solo están disponibles en el nivel de anidamiento en el que están definidas.</p>
+                        <p>Mira el siguiente ejemplo:</p>
+                            <code>
+                                $mi_color: red;
+
+                                h1 {
+                                    $mi_color: green;
+                                    color: $mi_color;
+                                }
+
+                                p {
+                                    color: $mi_color;
+                                }
+                            </code>
+                        <p>¿El color del texto dentro de una <span class="rojo">&lt;p&gt;</span> etiqueta será 
+                            rojo o verde? ¡Será rojo!</p>
+                        <p>La otra definición, $mi_color: green; está dentro de la <span class="rojo">&lt;h1&gt;</span> 
+                            regla, ¡y solo estará disponible allí!</p>
+                        <p>Entonces, la salida CSS será:</p>
+                            <code>
+                                h1 {
+                                    color: green;
+                                }
+                                  
+                                p {
+                                    color: red;
+                                }
+                            </code>
+                        <p>Ok, ese es el comportamiento predeterminado para el alcance variable.</p>
+                    <h3>Usando Sass! global</h3>
+                        <p>El comportamiento predeterminado para el alcance de la variable se puede anular mediante el <span class="rojo">!global</span> 
+                            interruptor.</p>
+                        <p><span class="rojo">!global</span> indica que una variable es global, lo que significa que es accesible en todos los niveles.</p>
+                        <p>Mire el siguiente ejemplo (igual que el anterior, pero con <span class="rojo">!global</span> agregado):</p>
+                            <code>
+                                $mi_color: red;
+
+                                h1 {
+                                    $mi_color: green !global;
+                                    color: $mi_color;
+                                }
+
+                                p {
+                                    color: $mi_color;
+                                }
+                            </code>
+                        <p>¡ Ahora el color del texto dentro de una <span class="rojo">&lt;p&gt;</span> etiqueta será verde!</p>
+                        <p>Entonces, la salida CSS será:</p>
+                            <code>
+                                h1 {
+                                    color: green;
+                                }
+                                
+                                p {
+                                    color: green;
+                                }
+                            </code>
+                        <p class="comentario"><strong>Sugerencia:</strong> las variables globales deben definirse fuera de cualquier regla. 
+                            Sería conveniente definir todas las variables globales en su propio archivo, denominado <em>"_globals.scss"</em>, 
+                            e incluir el archivo con la palabra clave <em>@include</em>.</p>
+                </article>
+        </section>
+        <hr/>
+        <section id="Reglas_y_propiedades_de_anidaci&oacute;n" class="main-section">
+            <header><h2>Reglas y propiedades de anidaci&oacute;n</h2></header>
+                <article>
+                    <h3>Reglas de anidación Sass</h3>
+                        <p>Sass le permite anidar selectores CSS de la misma manera que HTML.</p>
+                        <p>Mire un ejemplo de algún código Sass para la navegación de un sitio:</p>
+                            <code>
+                                nav {
+                                    ul {
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                    }
+
+                                    li {
+                                        display: inline-block;
+                                    }
+
+                                    a {
+                                        display: block;
+                                        padding: 6px 12px;
+                                        text-decoration: none;
+                                    }
+                                }
+                            </code>
+                        <p>Tenga en cuenta que en Sass, los selectores <span class="rojo">ul</span>, <span class="rojo">li</span> y 
+                            <span class="rojo">a</span> están anidados dentro del <span class="rojo">nav</span> selector.</p>
+                        <p>Mientras que en CSS, las reglas se definen una por una (no anidadas):</p>
+                            <code>
+                                nav ul {
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style: none;
+                                }
+
+                                nav li {
+                                    display: inline-block;
+                                }
+
+                                nav a {
+                                    display: block;
+                                    padding: 6px 12px;
+                                    text-decoration: none;
+                                }
+                            </code>
+                        <p>Debido a que puede anidar propiedades en Sass, es más limpio y más fácil de leer que el CSS estándar.</p>
+                    <h3>Propiedades de anidación Sass</h3>
+                        <p>Muchas propiedades CSS tienen el mismo prefijo, como font-family, font-size y font-weight o text-align, text-transform 
+                            y text-overflow.</p>
+                        <p>Con Sass puedes escribirlos como propiedades anidadas:</p>
+                            <code>
+                                font: {
+                                    family: Helvetica, sans-serif;
+                                    size: 18px;
+                                    weight: bold;
+                                }
+                                  
+                                text: {
+                                    align: center;
+                                    transform: lowercase;
+                                    overflow: hidden;
+                                }
+                            </code>
+                        <p>El transpilador Sass convertirá lo anterior a CSS normal:</p>
+                            <code>
+                                font-family: Helvetica, sans-serif;
+                                font-size: 18px;
+                                font-weight: bold;
+
+                                text-align: center;
+                                text-transform: lowercase;
+                                text-overflow: hidden;
+                            </code>
+                </article>    
+        </section>
+        <hr/>
+        <section id="Sass_@import_y_parciales" class="main-section">
+            <header><h2>Sass @import y parciales</h2></header>
+                <article>
+                    <p>Sass mantiene el código CSS DRY (Don't Repeat Yourself / No repite el código). Una forma de escribir código DRY es mantener el código relacionado 
+                        en archivos separados.</p>
+                    <p>Puede crear archivos pequeños con fragmentos de código CSS para incluirlos en otros archivos Sass. Ejemplos de dichos archivos 
+                        pueden ser: restablecer archivo, variables, colores, fuentes, tamaños de fuente, etc.</p>
+                    <h3>Importación de archivos Sass</h3>
+                        <p>Al igual que CSS, Sass también admite la directiva <span class="rojo">@import</span>.</p>
+                        <p>La directiva <span class="rojo">@import</span> le permite incluir el contenido de un archivo en otro.</p>
+                        <p>La directiva <span class="rojo">@import</span> en CSS tiene un gran inconveniente debido a problemas de rendimiento; crea 
+                            una solicitud HTTP adicional cada vez que lo llama. Sin embargo, la directiva Sass <span class="rojo">@import</span> incluye 
+                            el archivo en el CSS; ¡así que no se requiere una llamada HTTP adicional en tiempo de ejecución!</p>
+                            <code>
+                                @import nombre_archivo;
+                            </code>
+                        <p><strong>Sugerencia:</strong> no necesita especificar una extensión de archivo, Sass asume automáticamente que se refiere a un 
+                            archivo .sass o .scss. También puede importar archivos CSS. La directiva <span class="rojo">@import</span> importa el archivo 
+                            y cualquier variable o combinación definida en el archivo importado se puede usar en el archivo principal.</p>
+                        <p>Puede importar tantos archivos como necesite en el archivo principal:</p>
+                            <code>
+                                @import "variables";
+                                @import "colors";
+                                @import "reset";
+                            </code>
+                        <p>Veamos un ejemplo: supongamos que tenemos un archivo de reinicio llamado "reset.scss", que se ve así:</p>
+                            <code>
+                                html,
+                                body,
+                                ul,
+                                ol {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            </code>
+                        <p>y ahora queremos importar el archivo "reset.scss" a otro archivo llamado "standard.scss".</p>
+                        <p>Así es como lo hacemos: es normal agregar la directiva <span class="rojo">@import</span> en la parte superior de un archivo; 
+                            de esta forma su contenido tendrá un alcance global:</p>
+                            <code>
+                                @import "reset";
+
+                                body {
+                                    font-family: Helvetica, sans-serif;
+                                    font-size: 18px;
+                                    color: red;
+                                }
+                            </code>
+                        <p>Entonces, cuando se transpila el archivo "standard.css", el CSS se verá así:</p>
+                            <code>
+                                html, body, ul, ol {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                                  
+                                body {
+                                    font-family: Helvetica, sans-serif;
+                                    font-size: 18px;
+                                    color: red;
+                                }
+                            </code>
+                    <h3>Sass Parciales</h3>
+                            <p>De forma predeterminada, Sass transpila todos los archivos .scss directamente. Sin embargo, cuando desea importar un archivo, 
+                                no necesita transpilarlo directamente.</p>
+                            <p>Sass tiene un mecanismo para esto: si comienza el nombre del archivo con un guión bajo, Sass no lo transpilará. Los archivos 
+                                nombrados de esta manera se denominan parciales en Sass.</p>
+                            <p>Entonces, un archivo Sass parcial se nombra con un guión bajo inicial:</p>
+                                <code>
+                                    _nombre_archivo;
+                                </code>
+                            <p>El siguiente ejemplo muestra un archivo Sass parcial llamado <em>"_colors.scss"</em>. (Este archivo no se transferirá directamente 
+                                a <em>"colors.css")</em>:</p>
+                                <code>
+                                    $color_rosa: #EE82EE;
+                                    $color_azul: #4169E1;
+                                    $color_verde: #8FBC8F;
+                                </code>
+                            <p>Ahora, si importa el archivo parcial, omita el guión bajo. Sass entiende que debe importar el archivo <em>"_colors.scss"</em>:</p>
+                                <code>
+                                    @import "colors";
+
+                                    body {
+                                        font-family: Helvetica, sans-serif;
+                                        font-size: 18px;
+                                        color: $color_azul;
+                                    }
+                                </code>
+                </article>
+        </section>
+        <hr/>
+        <section id="Sass_@mixin_y_@include" class="main-section">
+            <header><h2>Sass @mixin y @include</h2></header>
+                <article>
+                    <h3>Sass Mixins</h3>  
+                        <p>La directiva <span class="rojo">@mixin</span> le permite crear código CSS que se reutilizará en todo el sitio web.</p>
+                        <p>La directiva <span class="rojo">@include</span> se crea para permitirle usar (incluir) el mixin.</p>
+                        <h4>Definición de un Mixin</h4>
+                            <p>Un mixin se define con la directiva <span class="rojo">@mixin</span>.</p>
+                                <code>
+                                    @mixin nombre {
+                                        property: value;
+                                        property: value;
+                                        ...
+                                    }
+                                </code>
+                            <p>El siguiente ejemplo crea un mixin llamado "texto_importante":</p>
+                                <code>
+                                    @mixin texto_importante {
+                                        color: red;
+                                        font-size: 25px;
+                                        font-weight: bold;
+                                        border: 1px solid blue;
+                                    }
+                                </code>
+                            <p class="comentario"><strong>Consejo:</strong> un consejo sobre guiones y guiones bajos en Sass: los guiones y los guiones bajos 
+                                se consideran iguales. ¡Esto significa que @mixin important-text { } y @mixin important_text { } se consideran el mismo mixin!</p>
+                        <h4>Usando una mezcla</h4>
+                            <p>La directiva <span class="rojo">@include</span> se usa para incluir un mixin.</p>
+                                <code>
+                                    selector {
+                                        @include mixin-nombre;
+                                    }
+                                </code>
+                            <p>Entonces, para incluir la combinación de "texto_importante" creada anteriormente:</p>
+                                <code>
+                                    .danger {
+                                        @include texto_importante;
+                                        background-color: green;
+                                    }
+                                </code>
+                            <p>El transpilador Sass convertirá lo anterior a CSS normal:</p>
+                                <code>
+                                    .danger {
+                                        color: red;
+                                        font-size: 25px;
+                                        font-weight: bold;
+                                        border: 1px solid blue;
+                                        background-color: green;
+                                    }
+                                </code>
+                            <p>Un mixin también puede incluir otros mixins:</p>
+                                <code>
+                                    @mixin texto_especial {
+                                        @include texto_importante;
+                                        @include enlace;
+                                        @include borde_especial;
+                                    }
+                                </code>
+                        <h4>Pasar variables a un Mixin</h4>
+                            <p>Los mixins aceptan argumentos. De esta manera puedes pasar variables a un mixin.</p>
+                            <p>Aquí se explica cómo definir un mixin con argumentos:</p>
+                                <code>
+                                    /* Definir mixin con dos argumentos */
+                                    @mixin bordered($color, $width) {
+                                        border: $width solid $color;
+                                    }
+
+                                    .mi_articulo {
+                                        @include bordered(blue, 1px);  // Llamar a mixin con dos valores
+                                    }
+
+                                    .mis_notas {
+                                        @include bordered(red, 2px); // Llamar a mixin con dos valores
+                                    }
+                                </code>
+                            <p>Observe que los argumentos se establecen como variables y luego se usan como los valores (color y ancho) de la propiedad 
+                                del borde.</p>
+                            <p>Después de la compilación, el CSS se verá así:</p>
+                                <code>
+                                    .mi_articulo {
+                                        border: 1px solid blue;
+                                    } 
+
+                                    .mis_notas {
+                                        border: 2px solid red;
+                                    }
+                                </code>
+                        <h4>Valores predeterminados para un Mixin</h4>
+                            <p>También es posible definir valores predeterminados para las variables mixtas:</p>
+                                <code>
+                                    @mixin bordered($color: blue, $width: 1px) {
+                                        border: $width solid $color;
+                                    }
+                                </code>
+                            <p>Luego, solo necesita especificar los valores que cambian cuando incluye el mixin:</p>
+                                <code>
+                                    .mis_consejos {
+                                        @include bordered($color: orange);
+                                    }
+                                </code>
+                        <h4>Uso de un Mixin para prefijos de proveedores</h4>
+                                <p>Otro buen uso de un mixin es para prefijos de proveedores.</p>
+                                <p>Aquí hay un ejemplo para transformar:</p>
+                                    <code>
+                                        @mixin transform($property) {
+                                            -webkit-transform: $property;
+                                            -ms-transform: $property;
+                                            transform: $property;
+                                        }
+                                          
+                                        .mi_caja {
+                                            @include transform(rotate(20deg));
+                                        }
+                                    </code>
+                                <p>Después de la compilación, el CSS se verá así:</p>
+                                    <code>
+                                        .mi_caja {
+                                            -webkit-transform: rotate(20deg);
+                                            -ms-transform: rotate(20deg);
+                                            transform: rotate(20deg);
+                                        }
+                                    </code>
+                </article>
+        </section> 
+        <hr/> 
+        <section id="Sass_@extend_y_Herencia" class="main-section">
+            <header><h2>Sass @extend y Herencia</h2></header>
+                <article>
+                    <h3>Directiva Sass @extend</h3>  
+                        <p>La directiva <span class="rojo">@extend</span> le permite compartir un conjunto de propiedades CSS de un selector a otro.</p>
+                        <p>La directiva <span class="rojo">@extend</span> es útil si tiene elementos con estilos casi idénticos que solo difieren en algunos 
+                            pequeños detalles.</p>
+                        <p>El siguiente ejemplo de Sass primero crea un estilo básico para los botones (este estilo se usará para la mayoría de los botones). 
+                            Luego, creamos un estilo para un botón "Informe" y un estilo para un botón "Enviar". Tanto el botón "Informe" como el botón "Enviar" 
+                            heredan todas las propiedades CSS de la clase .boton_basico, a través de la directiva <span class="rojo">@extend</span>. Además, 
+                            tienen sus propios colores definidos:</p>
+                            <code>
+                                .boton_basico  {
+                                    border: none;
+                                    padding: 15px 30px;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                }
+                                  
+                                .boton_informe  {
+                                    @extend .boton_basico;
+                                    background-color: red;
+                                }
+                                  
+                                .boton_enviar  {
+                                    @extend .boton_basico;
+                                    background-color: green;
+                                    color: white;
+                                }
+                            </code>
+                        <p>Después de la compilación, el CSS se verá así:</p>
+                            <code>
+                                .boton_basico, .boton_informe, .boton_enviar {
+                                    border: none;
+                                    padding: 15px 30px;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    cursor: pointer;
+                                }
+                                  
+                                .boton_informe  {
+                                    background-color: red;
+                                }
+                                  
+                                .boton_enviar  {
+                                    background-color: green;
+                                    color: white;
+                                }
+                            </code>
+                        <p>Al usar la directiva <span class="rojo">@extend</span>, no necesita especificar varias clases para un elemento en su código HTML, 
+                            como este: &lt;button class="boton_basico boton_informe"&gt; Informar esto &lt;&#47;button&gt;. Solo necesita especificar 
+                            .boton_informe para obtener ambos conjuntos de estilos.</p>
+                        <p>La directiva <span class="rojo">@extend</span> ayuda a mantener su código Sass muy DRY (Don't Repeat Yourself / No repite el código).</p>
+                </article>
+        </section> 
+        <hr/>   
+        <section id="Funciones_Sass" class="main-section">
+            <header><h2>Funciones Sass</h2></header>
+                <article>
+                    <h3 id="Funciones_de_cadena">Funciones de cadena</h3>  
+                        <p>Las funciones de cadena se utilizan para manipular y obtener información sobre cadenas.</p>
+                        <p>Las cadenas Sass están basadas en 1. El primer carácter de una cadena está en el índice 1, no en el 0.</p>
+                        <p>La siguiente tabla enumera todas las funciones de cadena en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>quote(string)</td>
+                                    <td>Agrega comillas a la cadena y devuelve el resultado.</td>
+                                    <td>quote(Hello world!)<br/>
+                                        Result: "Hello world!"</td>                                    
+                                </tr>
+                                <tr>
+                                    <td>str-index(string, substring)</td>
+                                    <td>Devuelve el índice de la primera aparición de la subcadena dentro de la cadena.</td>
+                                    <td>str-index("Hello world!", "H")<br/>
+                                        Result: 1</td>
+                                </tr>
+                                <tr>
+                                    <td>str-insert(string, insert, index)</td>
+                                    <td>Devuelve una cadena con la inserción insertada en la posición de índice especificada.</td>
+                                    <td>str-insert("Hello world!", " wonderful", 6)<br/>
+                                        Result: "Hello wonderful world!"</td>
+                                </tr>
+                                <tr>
+                                    <td>str-length(string)</td>
+                                    <td>Devuelve la longitud de la cadena (en caracteres).</td>
+                                    <td>str-length("Hello world!")<br/>
+                                        Result: 12</td>
+                                </tr>
+                                <tr>
+                                    <td>str-slice(string, start, end)</td>
+                                    <td>Extrae caracteres de una cadena, empieza en la posición de índice inicial y termina en la posición de índice 
+                                        final, y devuelve el segmento.</td>
+                                    <td>str-slice("Hello world!", 2, 5)<br/>
+                                        Result: "ello"</td>
+                                </tr>
+                                <tr>
+                                    <td>to-lower-case(string)</td>
+                                    <td>Devuelve una copia de la cadena convertida a minúsculas.</td>
+                                    <td>to-lower-case("Hello World!")<br/>
+                                        Result: "hello world!"</td>
+                                </tr>
+                                <tr>
+                                    <td>to-upper-case(string)</td>
+                                    <td>Devuelve una copia de la cadena convertida a mayúsculas.</td>
+                                    <td>to-upper-case("Hello World!")<br/>
+                                        Result: "HELLO WORLD!"</td>
+                                </tr>
+                                <tr>
+                                    <td>unique-id()</td>
+                                    <td>Devuelve una cadena única sin comillas generada aleatoriamente (se garantiza que es única dentro de la 
+                                        sesión de sass actual).</td>
+                                    <td>unique-id()<br/>
+                                        Result: tyghefnsv</td>
+                                </tr>
+                                <tr>
+                                    <td>unquote(string)</td>
+                                    <td>Elimina las comillas alrededor de la cadena (si las hay) y devuelve el resultado.</td>
+                                    <td>unquote("Hello world!")<br/>
+                                        Result: Hello world!</td>
+                                </tr>                            
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_num&eacute;ricas">Funciones num&eacute;ricas</h3>
+                        <p>Las funciones numéricas se utilizan para manipular valores numéricos.</p>
+                        <p>La siguiente tabla enumera todas las funciones numéricas en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>abs(number)</td>
+                                    <td>Devuelve el valor absoluto de número.</td>
+                                    <td>abs(15)<br/>
+                                        Result: 15<br/>
+                                        abs(-15)<br/>
+                                        Result: 15</td>
+                                </tr>
+                                <tr>
+                                    <td>ceil(number)</td>
+                                    <td>Redondea el número al entero más cercano.</td>
+                                    <td>ceil(15.20)<br/>
+                                        Result: 16</td>
+                                </tr>
+                                <tr>
+                                    <td>comparable(num1, num2)</td>
+                                    <td>Devuelve si num1 y num2 son comparables.</td>
+                                    <td>comparable(15px, 10px)<br/>
+                                        Result: true<br/>
+                                        comparable(20mm, 1cm)<br/>
+                                        Result: true<br/>
+                                        comparable(35px, 2em)<br/>
+                                        Result: false</td>
+                                </tr>
+                                <tr>
+                                    <td>floor(number)</td>
+                                    <td>Redondea el número hacia abajo al entero más cercano.</td>
+                                    <td>floor(15.80)<br/>
+                                        Result: 15</td>
+                                </tr>
+                                <tr>
+                                    <td>max(number...)</td>
+                                    <td>Devuelve el valor más alto de varios números.</td>
+                                    <td>max(5, 7, 9, 0, -3, -7)<br/>
+                                        Result: 9</td>
+                                </tr>
+                                <tr>
+                                    <td>min(number...)</td>
+                                    <td>Devuelve el valor más bajo de varios números.</td>
+                                    <td>min(5, 7, 9, 0, -3, -7)<br/>
+                                        Result: -7</td>
+                                </tr>
+                                <tr>
+                                    <td>percentage(number)</td>
+                                    <td>Convierte un número a un porcentaje (multiplica el número por 100).</td>
+                                    <td>percentage(1.2)<br/>
+                                        Result: 120</td>
+                                </tr>
+                                <tr>
+                                    <td>random()</td>
+                                    <td>Devuelve un número aleatorio entre 0 y 1.</td>
+                                    <td>random()<br/>
+                                        Result: 0.45673</td>
+                                </tr>
+                                <tr>
+                                    <td>random(number)</td>
+                                    <td>Devuelve un entero aleatorio entre 1 y número.</td>
+                                    <td>random(6)<br/>
+                                        Result: 4</td>
+                                </tr>
+                                <tr>
+                                    <td>round(number)</td>
+                                    <td>Redondea el número al entero más cercano.</td>
+                                    <td>round(15.20)<br/>
+                                        Result: 15<br/>
+                                        round(15.80)<br/>
+                                        Result: 16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_de_lista">Funciones de lista</h3>
+                        <p>Las funciones de lista se utilizan para acceder a los valores de una lista, combinar listas y agregar elementos 
+                            a las listas.</p>
+                        <p>Las listas Sass son inmutables (no pueden cambiar). Por lo tanto, las funciones de lista que devuelven una lista 
+                            devolverán una nueva lista y no cambiarán la lista original.</p>
+                        <p>Las listas Sass están basadas en 1. El primer elemento de una lista está en el índice 1, no en el 0.</p>
+                        <p>La siguiente tabla enumera todas las funciones de lista en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>append(list, value, [separator])</td>
+                                    <td>Agrega un solo valor al final de la lista. el separador puede ser automático, coma o espacio. automático 
+                                        es predeterminado.</td>
+                                    <td>append((a b c), d)<br/>
+                                        Result: a b c d<br/>
+                                        append((a b c), (d), comma)<br/>
+                                        Result: a, b, c, d</td>
+                                </tr>
+                                <tr>
+                                    <td>index(list, value)</td>
+                                    <td>Devuelve la posición del índice para el valor en la lista.</td>
+                                    <td>index(a b c, b)<br/>
+                                        Result: 2<br/>
+                                        index(a b c, f)<br/>
+                                        Result: null</td>
+                                </tr>
+                                <tr>
+                                    <td>is-bracketed(list)</td>
+                                    <td>Comprueba si la lista tiene corchetes.</td>
+                                    <td>is-bracketed([a b c])<br/>
+                                        Result: true<br/>
+                                        is-bracketed(a b c)<br/>
+                                        Result: false</td>
+                                </tr>
+                                <tr>
+                                    <td>join(list1, list2, [separator, bracketed])</td>
+                                    <td>Agrega list2 al final de list1. el separador puede ser automático, coma o espacio. auto es predeterminado 
+                                        (usará el separador en la primera lista). entre paréntesis puede ser automático, verdadero o falso. 
+                                        automático es predeterminado.</td>
+                                    <td>join(a b c, d e f)<br/>
+                                        Result: a b c d e f<br/>
+                                        join((a b c), (d e f), comma)<br/>
+                                        Result: a, b, c, d, e, f<br/>
+                                        join(a b c, d e f, $bracketed: true)<br/>
+                                        Result: [a b c d e f]</td>
+                                </tr>
+                                <tr>
+                                    <td>length(list)</td>
+                                    <td>Devuelve la longitud de la lista.</td>
+                                    <td>length(a b c)<br/>
+                                        Result: 3</td>
+                                </tr>
+                                <tr>
+                                    <td>list-separator(list)</td>
+                                    <td>Devuelve el separador de lista utilizado, como una cadena. Puede ser espacio o coma.</td>
+                                    <td>list-separator(a b c)<br/>
+                                        Result: "space"<br/>
+                                        list-separator(a, b, c)<br/>
+                                        Result: "comma"</td>
+                                </tr>
+                                <tr>
+                                    <td>nth(list, n)</td>
+                                    <td>Devuelve el n-ésimo elemento de la lista.</td>
+                                    <td>nth(a b c, 3)<br/>
+                                        Result: c</td>
+                                </tr>   
+                                <tr>
+                                    <td>set-nth(list, n, value)</td>
+                                    <td>Establece el elemento de lista n en el valor especificado.</td>
+                                    <td>set-nth(a b c, 2, x)<br/>
+                                        Result: a x c</td>
+                                </tr>
+                                <tr>
+                                    <td>zip(lists)</td>
+                                    <td>Combina listas en una sola lista multidimensional.</td>
+                                    <td>zip(1px 2px 3px, solid dashed dotted, red green blue)<br/>
+                                        Result: 1px solid red, 2px dashed green, 3px dotted blue</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_de_mapa">Funciones de mapa</h3>
+                        <p>En Sass, el tipo de datos de mapa representa uno o más pares clave/valor.</p>
+                        <p><strong>Consejo:</strong> También es posible utilizar las <u>funciones de Lista</u> con mapas. Entonces el mapa 
+                            será tratado como una lista con dos elementos.</p>
+                        <p>Los mapas Sass son inmutables (no pueden cambiar). Por lo tanto, las funciones de mapa que devuelven un mapa 
+                            devolverán un nuevo mapa y no cambiarán el mapa original.</p>
+                        <p>La siguiente tabla enumera todas las funciones de mapa en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>map-get(map, key)</td>
+                                    <td>Devuelve el valor de la clave especificada en el mapa.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        map-get($font-sizes, "small")<br/>
+                                        Result: 12px</td>
+                                </tr>
+                                <tr>
+                                    <td>map-has-key(map, key)</td>
+                                    <td>Comprueba si el mapa tiene la clave especificada. Devuelve verdadero o falso.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        map-has-key($font-sizes, "big")<br/>
+                                        Result: false</td>
+                                </tr>
+                                <tr>
+                                    <td>map-keys(map)</td>
+                                    <td>Devuelve una lista de todas las claves en el mapa.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        map-keys($font-sizes)<br/>
+                                        Result: "small", "normal, "large"</td>
+                                </tr>
+                                <tr>
+                                    <td>map-merge(map1, map2)</td>
+                                    <td>Agrega map2 al final de map1.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        $font-sizes2: ("x-large": 30px, "xx-large": 36px)<br/>
+                                        map-merge($font-sizes, $font-sizes2)<br/>
+                                        Result: "small": 12px, "normal": 18px, "large": 24px, "x-large": 30px, "xx-large": 36px</td>
+                                </tr>
+                                <tr>
+                                    <td>map-remove(map, keys...)</td>
+                                    <td>Elimina las claves especificadas del mapa.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        map-remove($font-sizes, "small")<br/>
+                                        Result: ("normal": 18px, "large": 24px)<br/>
+                                        map-remove($font-sizes, "small", "large")<br/>
+                                        Result: ("normal": 18px)</td>
+                                </tr>
+                                <tr>
+                                    <td>map-values(map)</td>
+                                    <td>Devuelve una lista de todos los valores en el mapa.</td>
+                                    <td>$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)<br/>
+                                        map-values($font-sizes)<br/>
+                                        Result: 12px, 18px, 24px</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_de_selector">Funciones de selector</h3>
+                        <p>Las funciones de selector se utilizan para comprobar y manipular selectores.</p>
+                        <p>La siguiente tabla enumera todas las funciones de selección en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>is-superselector(super, sub)</td>
+                                    <td>Comprueba si el superselector coincide con todos los elementos que coinciden con el sub.</td>
+                                    <td>is-superselector("div", "div.myInput")<br/>
+                                        Result: true<br/>
+                                        is-superselector("div.myInput", "div")<br/>
+                                        Result: false<br/>
+                                        is-superselector("div", "div")<br/>
+                                        Result: true</td>
+                                </tr>
+                                <tr>
+                                    <td>selector-append(selectors)</td>
+                                    <td>Agrega el segundo selector (y tercero/cuarto, etc.) al primer selector.</td>
+                                    <td>selector-append("div", ".myInput")<br/>
+                                        Result: div.myInput<br/>
+                                        selector-append(".warning", "__a")<br/>
+                                        Result: .warning__a</td>
+                                </tr>
+                                <tr>
+                                    <td>selector-extend(selector, extendee, extender)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>selector-nest(selectors)</td>
+                                    <td>Devuelve un nuevo selector que contiene una lista anidada de selectores de CSS según la lista 
+                                        proporcionada.</td>
+                                    <td>selector-nest("ul", "li")<br/>
+                                        Result: ul li<br/>
+                                        selector-nest(".warning", "alert", "div")<br/>
+                                        Result: .warning div, alert div</td>
+                                </tr>
+                                <tr>
+                                    <td>selector-parse(selector)</td>
+                                    <td>Devuelve una lista de cadenas contenidas en el selector utilizando el mismo formato que el 
+                                        selector principal.</td>
+                                    <td>selector-parse("h1 .myInput .warning")<br/>
+                                        Result: ('h1' '.myInput' '.warning')</td>
+                                </tr>
+                                <tr>
+                                    <td>selector-replace(selector, original, replacement)</td>
+                                    <td>Devuelve un nuevo selector con los selectores especificados en reemplazo en lugar de los 
+                                        selectores especificados en el original.</td>
+                                    <td>selector-replace("p.warning", "p", "div")<br/>
+                                        Result: div.warning</td>
+                                </tr>
+                                <tr>
+                                    <td>selector-unify(selector1, selector2)</td>
+                                    <td>Devuelve un nuevo selector que coincide solo con los elementos que coinciden con selector1 
+                                        y selector2.</td>
+                                    <td>selector-unify("myInput", ".disabled")<br/>
+                                        Result: myInput.disabled<br/>
+                                        selector-unify("p", "h1")<br/>
+                                        Result: null</td>
+                                </tr>
+                                <tr>
+                                    <td>simple-selectors(selectors)</td>
+                                    <td>Devuelve una lista de los selectores individuales en selectores.</td>
+                                    <td>simple-selectors("div.myInput")<br/>
+                                        Result: div, .myInput<br/>
+                                        simple-selectors("div.myInput:before")<br/>
+                                        Result: div, .myInput, :before</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_de_introspecci&oacute;n">Funciones de introspecci&oacute;n</h3>
+                        <p>Las funciones de introspección rara vez se usan al construir una hoja de estilo. Sin embargo, son valiosos si algo 
+                            no funciona correctamente, para averiguar qué está pasando: como funciones de depuración.</p>
+                        <p>La siguiente tabla enumera todas las funciones de introspección en Sass:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>call(function, arguments...)</td>
+                                    <td>Llama a una función con argumentos y devuelve el resultado.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>content-exists()</td>
+                                    <td>Comprueba si al mixin actual se le pasó un bloque @content.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>feature-exists(feature)</td>
+                                    <td>Comprueba si la característica es compatible con la implementación actual de Sass.</td>
+                                    <td>feature-exists("at-error");<br/>
+                                        Result: true</td>
+                                </tr>
+                                <tr>
+                                    <td>function-exists(functionname)</td>
+                                    <td>Comprueba si existe la función especificada.</td>
+                                    <td>function-exists("nonsense")<br/>
+                                        Result: false</td>
+                                </tr>
+                                <tr>
+                                    <td>get-function(functionname, css: false)</td>
+                                    <td>Devuelve la función especificada. Si css es verdadero, devuelve una función CSS simple en su lugar.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>global-variable-exists(variablename)</td>
+                                    <td>Comprueba si existe la variable global especificada.</td>
+                                    <td>variable-exists(a)<br/>
+                                        Result: true</td>
+                                </tr>
+                                <tr>
+                                    <td>inspect(value)</td>
+                                    <td>Devuelve una representación de cadena de valor.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>mixin-exists(mixinname)</td>
+                                    <td>Comprueba si existe el mixin especificado.</td>
+                                    <td>mixin-exists("important-text")<br/>
+                                        Result: true</td>
+                                </tr>
+                                <tr>
+                                    <td>type-of(value)</td>
+                                    <td>Devuelve el tipo de valor. Puede ser number, string, color, list, map, bool, null, function, arglist.</td>
+                                    <td>type-of(15px)<br/>
+                                        Result: number<br/>
+                                        type-of(#ff0000)<br/>
+                                        Result: color</td>
+                                </tr>
+                                <tr>
+                                    <td>unit(number)</td>
+                                    <td>Devuelve la unidad asociada a un número.</td>
+                                    <td>unit(15px)<br/>
+                                        Result: px</td>
+                                </tr>
+                                <tr>
+                                    <td>unitless(number)</td>
+                                    <td>Comprueba si el número especificado tiene una unidad asociada.</td>
+                                    <td>unitless(15px)<br/>
+                                        Result: false<br/>
+                                        unitless(15)<br/>
+                                        Result: true</td>
+                                </tr>
+                                <tr>
+                                    <td>variable-exists(variablename)</td>
+                                    <td>Comprueba si la variable especificada existe en el ámbito actual.</td>
+                                    <td>variable-exists(b)<br/>
+                                        Result: true</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+                <article>
+                    <h3 id="Funciones_de_color">Funciones de color</h3>
+                        <p>Hemos dividido las funciones de color en Sass en tres partes: Establecer funciones de color, Obtener funciones de 
+                            color y Manipular funciones de color:</p>
+                        <h4>Establecer funciones de color</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>rgb(red, green, blue)</td>
+                                    <td>Establece un color usando el modelo Red-Green-Blue (RGB). Un valor de color RGB se especifica con: rgb 
+                                        (Red, Green, Blue). Cada parámetro define la intensidad de ese color y puede ser un número entero entre 
+                                        0 y 255, o un valor porcentual (de 0% a 100%).</td>
+                                    <td>rgb(0, 0, 255); // se representa como azul porque el parámetro azul se establece en su valor más alto (255) 
+                                        y los demás se establecen en 0</td>
+                                </tr>
+                                <tr>
+                                    <td>rgba(red, green, blue, alpha)</td>
+                                    <td>Establece un color usando el modelo Red-Green-Blue-Alpha (RGBA). Los valores de color RGBA son una extensión 
+                                        de los valores de color RGB con un canal alfa, que especifica la opacidad del color. El parámetro alfa es 
+                                        un número entre 0,0 (totalmente transparente) y 1,0 (totalmente opaco).</td>
+                                    <td>rgba(0, 0, 255, 0.3); // renderizado como azul con opacidad</td>
+                                </tr>
+                                <tr>
+                                    <td>hsl(hue, saturation, lightness)</td>
+                                    <td>Establece un color utilizando el modelo Hue-Saturation-Lightness (HSL) y representa una representación de 
+                                        colores en coordenadas cilíndricas. El tono es un grado en la rueda de colores (de 0 a 360): 0 o 360 es rojo, 
+                                        120 es verde, 240 es azul. La saturación es un valor porcentual; 0% significa un tono de gris y 100% es el 
+                                        color completo. La ligereza también es un porcentaje; 0% es negro, 100% es blanco.</td>
+                                    <td>Example:
+                                        hsl(120, 100%, 50%); // verde<br/>
+                                        hsl(120, 100%, 75%); // verde claro<br/>
+                                        hsl(120, 100%, 25%); // verde oscuro<br/>
+                                        hsl(120, 60%, 70%); // verde pastel</td>
+                                </tr>
+                                <tr>
+                                    <td>hsla(hue, saturation, lightness, alpha)</td>
+                                    <td>Establece un color utilizando el modelo Hue-Saturation-Lightness-Alpha (HSLA). Los valores de color HSLA son 
+                                        una extensión de los valores de color HSL con un canal alfa, que especifica la opacidad del color. El parámetro 
+                                        alfa es un número entre 0,0 (totalmente transparente) y 1,0 (totalmente opaco).</td>
+                                    <td>hsl(120, 100 %, 50 %, 0,3); // verde con opacidad<br/>
+                                        hsl(120, 100%, 75%, 0,3); // verde claro con opacidad</td>
+                                </tr>
+                                <tr>
+                                    <td>grayscale(color)</td>
+                                    <td>Establece un color gris con la misma luminosidad que el color.</td>
+                                    <td>grayscale(#7fffd4);<br/>
+                                        Result: #c6c6c6</td>
+                                </tr>
+                                <tr>
+                                    <td>complement(color)</td>
+                                    <td>Establece un color que es el color complementario de color.</td>
+                                    <td>complement(#7fffd4);<br/>
+                                        Result: #ff7faa</td>
+                                </tr>
+                                <tr>
+                                    <td>invert(color, weight)</td>
+                                    <td>Establece un color que es el color inverso o negativo de color. El parámetro de peso es opcional y debe ser un 
+                                        número entre 0% y 100%. El valor predeterminado es 100 %.</td>
+                                    <td>invert(white);<br/>
+                                        Result: black</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Obtener funciones de color</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>red(color)</td>
+                                    <td>Devuelve el valor rojo de color como un número entre 0 y 255.</td>
+                                    <td>red(#7fffd4);<br/>
+                                        Result: 127<br/>
+                                        red(red);<br/>
+                                        Result: 255</td>
+                                </tr>
+                                <tr>
+                                    <td>green(color)</td>
+                                    <td>Devuelve el valor verde de color como un número entre 0 y 255.</td>
+                                    <td>green(#7fffd4);<br/>
+                                        Result: 255<br/>
+                                        green(blue);<br/>
+                                        Result: 0</td>
+                                </tr>
+                                <tr>
+                                    <td>blue(color)</td>
+                                    <td>Devuelve el valor azul de color como un número entre 0 y 255.</td>
+                                    <td>blue(#7fffd4);<br/>
+                                        Result: 212<br/>
+                                        blue(blue);<br/>
+                                        Result: 255</td>
+                                </tr>
+                                <tr>
+                                    <td>hue(color)</td>
+                                    <td>Devuelve el matiz del color como un número entre 0° y 360°.</td>
+                                    <td>hue(#7fffd4);<br/>
+                                        Result: 160deg</td>
+                                </tr>
+                                <tr>
+                                    <td>saturation(color)</td>
+                                    <td>Devuelve la saturación de color HSL como un número entre 0% y 100%.</td>
+                                    <td>saturation(#7fffd4);<br/>
+                                        Result: 100%</td>
+                                </tr>
+                                <tr>
+                                    <td>lightness(color)</td>
+                                    <td>Devuelve la luminosidad del color HSL como un número entre 0% y 100%.</td>
+                                    <td>lightness(#7fffd4);<br/>
+                                        Result: 74.9%</td>
+                                </tr>
+                                <tr>
+                                    <td>alpha(color)</td>
+                                    <td>Devuelve el canal alfa de color como un número entre 0 y 1.</td>
+                                    <td>alpha(#7fffd4);<br/>
+                                        Result: 1</td>
+                                </tr>
+                                <tr>
+                                    <td>opacity(color)</td>
+                                    <td>Devuelve el canal alfa de color como un número entre 0 y 1.</td>
+                                    <td>opacity(rgba(127, 255, 212, 0.5));<br/>
+                                        Result: 0.5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Manipular funciones de color</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Función</th>
+                                    <th>Descripción</th>
+                                    <th>Ejemplos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>mix(color1, color2, weight)</td>
+                                    <td>Crea un color que es una mezcla de color1 y color2. El parámetro de peso debe estar entre 0% y 100%. Un peso 
+                                        mayor significa que se debe usar más color1. Un peso más pequeño significa que se debe usar más de color2. 
+                                        El valor predeterminado es 50 %.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>adjust-hue(color, degrees)</td>
+                                    <td>Ajusta el tono del color con un grado de -360° a 360°.</td>
+                                    <td>adjust-hue(#7fffd4, 80deg);<br/>
+                                        Result: #8080ff</td>
+                                </tr>
+                                <tr>
+                                    <td>adjust-color(color, red, green, blue, hue, saturation, lightness, alpha)</td>
+                                    <td>Ajusta uno o más parámetros en la cantidad especificada. Esta función suma o resta la cantidad especificada al 
+                                        valor de color existente.</td>
+                                    <td>adjust-color(#7fffd4, blue: 25);<br/>
+                                        Result:</td>
+                                </tr>
+                                <tr>
+                                    <td>change-color(color, red, green, blue, hue, saturation, lightness, alpha)</td>
+                                    <td>Establece uno o más parámetros de un color en nuevos valores.</td>
+                                    <td>change-color(#7fffd4, red: 255);<br/>
+                                        Result: #ffffd4</td>
+                                </tr>
+                                <tr>
+                                    <td>scale-color(color, red, green, blue,  saturation, lightness, alpha)</td>
+                                    <td>Escala uno o más parámetros de color.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>rgba(color, alpha)</td>
+                                    <td>Crea un nuevo color rgba del color #hex con el canal alfa dado.</td>
+                                    <td>rgba(#7fffd4, 30%);<br/>
+                                        Result: rgba(127, 255, 212, 0.3)</td>
+                                </tr>
+                                <tr>
+                                    <td>lighten(color, amount)</td>
+                                    <td>Crea un color de color más claro con una cantidad entre 0% y 100%. El parámetro de cantidad aumenta la luminosidad 
+                                        de HSL en ese porcentaje.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>darken(color, amount)</td>
+                                    <td>Crea un color de color más oscuro con una cantidad entre 0% y 100%. El parámetro de cantidad disminuye la luminosidad 
+                                        de HSL en ese porcentaje.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>saturate(color, amount)</td>
+                                    <td>Crea un color de color más saturado con una cantidad entre 0% y 100%. El parámetro de cantidad aumenta la saturación d
+                                        e HSL en ese porcentaje.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>desaturate(color, amount)</td>
+                                    <td>Crea un color de color menos saturado con una cantidad entre 0% y 100%. El parámetro de cantidad disminuye la 
+                                        saturación de HSL en ese porcentaje.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>opacify(color, amount)</td>
+                                    <td>Crea un color de color más opaco con una cantidad entre 0 y 1. El parámetro de cantidad aumenta el canal alfa en esa 
+                                        cantidad.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>fade-in(color, amount)</td>
+                                    <td>Crea un color de color más opaco con una cantidad entre 0 y 1. El parámetro de cantidad aumenta el canal alfa en esa 
+                                        cantidad.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>transparentize(color, amount)</td>
+                                    <td>Crea un color de color más transparente con una cantidad entre 0 y 1. El parámetro de cantidad reduce el canal alfa 
+                                        en esa cantidad.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>fade-out(color, amount)</td>
+                                    <td>Crea un color de color más transparente con una cantidad entre 0 y 1. El parámetro de cantidad reduce el canal alfa 
+                                        en esa cantidad.</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </article>
+        </section> 
+        <section id="Referencia" class="main-section">
+            <header><h2>Referencia</h2></header>
+                <article>
+                    <ul>
+                        <li>Toda la documentación en esta página está tomada de <a target="_blank" href="https://www.w3schools.com/">www.w3schools.com</a></li>
+                    </ul>
+                </article>
+        </section>         
+<!--  LOGO.  -->             
+        <div id="logo"></div>          
+    </main>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    </body>  
+</html>

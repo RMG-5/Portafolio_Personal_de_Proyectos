@@ -1,0 +1,621 @@
+/* HOJA DE ESTILOS "MODELO DE SITIO WEB RECEPTIVO" */
+
+/* ********** ********** ********** ********** ********** */
+/*  ESTAS INSTRUCCIONES INDICAN COMO SE COMPORTARÁ LA "SECCIÓN ADAPTABLE AL ANCHO DE
+    LA PANTALLA", DEPENDIENDO DEL ANCHO DE LA MISMA  */
+
+/*  EL SELECTOR [class*="columna-"] SE APLICARÁ A TODOS LOS ELEMENTOS DE TIPO "class"
+    QUE INCLUYAN EL VALOR "columna-" COMO PARTE DE SU NOMBRE  */
+    [class*="columna-"] {
+        float: left;
+        padding: 1.5rem;
+    }
+    
+/*  DISPOSITIVOS EXTRA PEQUEÑOS (TELÉFONOS PEQUEÑOS DE 600px Y MENOS)  */
+    [class*="columna-"] {
+        width: 100%;
+    }
+    
+/*  DISPOSITIVOS PEQUEÑOS (TABLETAS VERTICALES Y TELÉFONOS GRANDES DE 600px A 767px)  */
+    @media only screen and (min-width: 600px) {
+        .columna-p-1 {width: 8.33%;}
+        .columna-p-2 {width: 16.66%;}
+        .columna-p-3 {width: 25%;}
+        .columna-p-4 {width: 33.33%;}
+        .columna-p-5 {width: 41.66%;}
+        .columna-p-6 {width: 50%;}
+        .columna-p-7 {width: 58.33%;}
+        .columna-p-8 {width: 66.66%;}
+        .columna-p-9 {width: 75%;}
+        .columna-p-10 {width: 83.33%;}
+        .columna-p-11 {width: 91.66%;}
+        .columna-p-12 {width: 100%;}
+    }
+    
+/*  DISPOSITIVOS MEDIANOS (TABLETAS HORIZONTALES DE 768px A 991px)  */
+    @media only screen and (min-width: 768px) {
+        .columna-m-1 {width: 8.33%;}
+        .columna-m-2 {width: 16.66%;}
+        .columna-m-3 {width: 25%;}
+        .columna-m-4 {width: 33.33%;}
+        .columna-m-5 {width: 41.66%;}
+        .columna-m-6 {width: 50%;}
+        .columna-m-7 {width: 58.33%;}
+        .columna-m-8 {width: 66.66%;}
+        .columna-m-9 {width: 75%;}
+        .columna-m-10 {width: 83.33%;}
+        .columna-m-11 {width: 91.66%;}
+        .columna-m-12 {width: 100%;}
+    }
+    
+/*  DISPOSITIVOS GRANDES (PORTÁTILES Y EQUIPOS DE ESCRITORIO DE 992px A 1199px)  */
+    @media only screen and (min-width: 992px) {
+        .columna-g-1 {width: 8.33%;}
+        .columna-g-2 {width: 16.66%;}
+        .columna-g-3 {width: 25%;}
+        .columna-g-4 {width: 33.33%;}
+        .columna-g-5 {width: 41.66%;}
+        .columna-g-6 {width: 50%;}
+        .columna-g-7 {width: 58.33%;}
+        .columna-g-8 {width: 66.66%;}
+        .columna-g-9 {width: 75%;}
+        .columna-g-10 {width: 83.33%;}
+        .columna-g-11 {width: 91.66%;}
+        .columna-g-12 {width: 100%;}
+    }
+    
+/*  DISPOSITIVOS EXTRA GRANDES (PORTÁTILES Y EQUIPOS DE ESCRITORIO GRANDES DE 1200px A 1400px)  */
+    @media only screen and (min-width: 1200px) {
+        .columna-eg-1 {width: 8.33%;}
+        .columna-eg-2 {width: 16.66%;}
+        .columna-eg-3 {width: 25%;}
+        .columna-eg-4 {width: 33.33%;}
+        .columna-eg-5 {width: 41.66%;}
+        .columna-eg-6 {width: 50%;}
+        .columna-eg-7 {width: 58.33%;}
+        .columna-eg-8 {width: 66.66%;}
+        .columna-eg-9 {width: 75%;}
+        .columna-eg-10 {width: 83.33%;}
+        .columna-eg-11 {width: 91.66%;}
+        .columna-eg-12 {width: 100%;}
+    }
+
+/*  ESTAS INSTRUCCIONES PERMITEN QUE EL CONTENIDO QUE SE ENCUENTRA ANTES Y DESPUÉS 
+    DE LA "SECCIÓN ADAPTABLE AL ANCHO DE LA PANTALLA" SE MANTENGA EN SU LUGAR  */
+    #seccion-adaptable::before,
+    #seccion-adaptable::after {
+        content: "";
+        clear: both;
+        display: block;
+    }     
+
+/* ********** ********** ********** ********** ********** */
+/*  ESTAS SON INSTRUCCIONES GENERALES PARA TODO EL CONTENIDO DE LA PAGINA  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    font-weight: bolder;
+}
+
+body {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 1.5rem;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+h2 {    
+    font-size: 3.0rem;    
+}
+
+h3 {
+    font-size: 2.5rem;  
+    text-align: center;
+}
+
+h4 {
+    margin-top: 3rem;
+    font-size: 2.2rem;  
+}
+
+h5 {
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;   
+    font-weight: 100;
+}   
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE ENCABEZADO (#encabezado)  */
+#encabezado {
+    margin: -1.5rem 0 0;
+    padding: 4rem 1rem;
+    color: #eeeeee;
+    background-color: rgb(0, 165, 0);
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ EL ENCABEZADO EN DISPOSITIVOS 
+    EXTRA PEQUEÑOS (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+    #encabezado {
+        margin: -1.5rem;
+        padding: 2rem 1rem;
+    }
+} 
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE BARRA DE NAVEGACIÓN SUPERIOR (#menu-horizontal)  */
+#menu-horizontal {
+    position: sticky;
+    top: 0;
+    z-index: 1;  
+}
+
+#menu-horizontal ul {
+    margin: 0 1.5rem;  
+    overflow: hidden;
+    background-color: #2f2f2f;    
+}
+
+#menu-horizontal li {
+    float: left;
+    list-style: none;
+}
+
+.boton-fijo-01,
+.boton-desple-01 {
+    display:  block;
+    width: 20rem;
+    padding: 1.5rem 0;  
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;  
+    color: #eeeeee;
+}
+
+.boton-fijo-01:hover,
+.boton-desple-01:hover {  
+    color: #2f2f2f;
+    background-color: #cdcdcd;
+}
+
+.boton-desple-01::before {
+    content: "► ";
+}
+
+.boton-desple-01:hover::before {
+    content: "▼ ";
+}
+
+.menu-desple-01:hover .con-men-desple-01 {
+    display: block;
+}
+
+.con-men-desple-01 {
+    display: none;
+    position: absolute;
+    margin: 0 1.5rem;
+    background-color: #4f4f4f;    
+    box-shadow: 0.4rem 0.8rem 1.6rem rgba(0,0,0,0.32), 0.4rem 0.8rem 1.6rem rgba(0,0,0,0.64);
+    z-index: 1;
+}
+
+.con-bot-desple-01 {
+    display: block;
+    width: 17rem;
+    padding: 1.5rem 0;  
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #eeeeee;
+    border-bottom: 0.1rem solid #eeeeee; 
+}
+
+.con-bot-desple-01:last-child {
+    border-bottom: none;
+}
+
+.con-bot-desple-01:hover {
+    color: #2f2f2f;
+    background-color: #efefef;  
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ LA BARRA DE NAVEGACIÓN SUPERIOR EN 
+    DISPOSITIVOS EXTRA PEQUEÑOS (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    #menu-horizontal ul {
+        margin: 0;   
+    }
+    #menu-horizontal li {
+        float: none; 
+        border-top: 0.1rem solid #eeeeee;
+    }
+    #menu-horizontal a {
+        width: 100%;
+    }
+    .boton-fijo-01,
+    .boton-desple-01 {
+        padding: 1.25rem 0;
+    }
+    .con-men-desple-01 {
+        position: static;
+        margin: 0;
+    }
+    .con-bot-desple-01 {
+        padding: 1.25rem 0;
+    }
+    .con-bot-desple-01:last-child {
+        border-bottom: none;
+    }
+}
+
+/*  ESTAS INSTRUCCIONES PERMITEN QUE EL VÍNCULO ACTIVO DE LA BARRA DE NAVEGACIÓN SUPERIOR TENGA 
+    UN COLOR DIFERENTE Y QUE A SU VEZ REGRESE A SU COLOR AL PASAR EL CURSOR SOBRE ÉL  */
+#index .pagina-activa,
+#parrafos .pagina-activa,
+#formulario .pagina-activa {
+    background-color: rgb(0, 100, 255); 
+}
+
+#tabla .pagina-activa {
+    background-color: #2f2f2f; 
+}
+
+#index .pagina-activa:hover,
+#parrafos .pagina-activa:hover,
+#formulario .pagina-activa:hover {
+    background-color: #cdcdcd;
+}
+
+#tabla .pagina-activa:hover {
+    background-color: rgb(0, 100, 255);
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE BARRA DE NAVEGACIÓN LATERAL IZQUIERDA (#menu-vertical)  */
+#menu-vertical li {
+    list-style: none;
+}
+
+#menu-vertical li a {
+    display: block;    
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;    
+    color: #eeeeee;
+    background-color: rgb(0, 155, 255);
+    box-shadow: 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.32), 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.64);
+    border-radius: 0.75rem;
+}
+
+#menu-vertical li a:hover {
+    background-color: rgb(0, 100, 255);
+    box-shadow: 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.32), 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.64);
+    border-radius: 2rem;
+}
+
+#menu-vertical li a:active {
+    background-color: rgb(0, 100, 255);
+    box-shadow: 0.05rem 0.1rem 0.2rem rgba(0,0,0,0.32), 0.05rem 0.1rem 0.2rem rgba(0,0,0,0.64);
+    border-radius: 2rem;
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ LA BARRA DE NAVEGACIÓN LATERAL 
+    IZQUIERDA EN DISPOSITIVOS EXTRA PEQUEÑOS (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    #menu-vertical li a {
+        margin: 0 -1.5rem;
+        box-shadow: none;
+        border-bottom: 0.1rem solid #dedede; 
+        border-radius: 0;
+    }
+    #menu-vertical li a:hover {
+        border-radius: 0;		
+    }
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE SECCIÓN PRINCIPAL (#principal)  */
+#principal {
+    margin-bottom: -3rem; 
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE SECCIÓN LATERAL DERECHA (#secundario)  */
+#secundario {
+    margin-bottom: -1.5rem;
+    padding: 1.5rem;     
+    color: white;
+    background-color: #5f5f5f;
+    box-shadow: 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.32), 0.1rem 0.2rem 0.4rem rgba(0,0,0,0.64);
+    border-radius: 1rem;
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ LA SECCIÓN LATERAL DERECHA EN 
+    DISPOSITIVOS EXTRA PEQUEÑOS (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    #secundario {
+        margin: 0 -1.5rem -1.5rem;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE PIE DE PÁGINA (#pie-pagina)  */
+.seccion-pie {
+    height: 20rem; 
+    margin-bottom: -1.5rem;
+    color: #eeeeee;  
+    background-color: #1f1f1f;
+}
+
+.seccion-pie p {
+    padding: 7rem 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ PIE DE PÁGINA EN DISPOSITIVOS EXTRA 
+    PEQUEÑOS (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    #pie-pagina {
+        margin: 0 -1.5rem;
+    }
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE IMÁGENES DE MUESTRA (.imagen-muestra)  */
+.imagen-muestra {    
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 7rem 1.5rem;  
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;    
+    color: white;
+    background: radial-gradient(closest-corner circle at 30% 30%, #000000, #000000 50%, #111111 60%, #222222 100%);
+    border-radius: 1rem;
+    transition: 1s ease-in-out;
+}
+
+.imagen-muestra:hover {
+    background: radial-gradient(closest-corner circle at 70% 70%, #444444, #444444 50%, #333333 60%, #222222 100%);
+    transform: scale(105%);   
+}
+
+/*  ESTAS INSTRUCCIONES OCULTAN LAS IMÁGENES DE MUESTRA EN DISPOSITIVOS EXTRA PEQUEÑOS
+    (TELÉFONOS, DE 600px Y MENOS)  */
+@media only screen and (max-width: 600px) {
+    .imagen-muestra {
+        display: none;
+    }
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE FORMULARIO (#contenedor-formulario)  */
+.formulario-fila::before,
+.formulario-fila::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+  
+.formulario-25 {
+    float: left;
+    width: 25%;
+}
+    
+.formulario-75 {
+    float: left;
+    width: 75%;
+}
+
+#contenedor-formulario {
+    padding: 1rem;
+    background-color: #f6f6f6;
+    border: 0.1rem dotted #6f6f6f;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.4rem rgba(0, 0, 0, 0.16), 0.2rem 0.4rem rgba(0, 0, 0, 0.32);
+    margin-bottom: 2rem;
+}
+
+#contenedor-formulario h4 {
+    margin-top: 0;
+    text-align: center;
+}    
+
+input[type=text],
+input[type=email],
+input[type=tel],
+select,
+textarea {
+    outline: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.8rem;  
+    font-family: monospace;
+    font-size: 1.5rem;  
+    border: 0.1rem dotted rgb(0, 165, 0);
+    border-radius: 0.5rem;
+    transition: 1s;     
+}
+  
+select {
+    font-family: Arial;    
+}
+
+textarea {
+    resize: vertical;
+}
+  
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+select:focus,
+textarea:focus {
+    background-color: rgb(235, 245, 255);
+    border: 0.1rem solid rgb(0, 165, 0);
+}
+  
+input[type=submit],
+input[type=reset] {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 165, 0);   
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    width: 95%;
+}
+  
+input[type=reset] {
+    width: 100%;
+}
+  
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: rgb(0, 115, 0);
+}
+
+legend {  
+    font-size: 1.5rem;
+    margin: 1.25rem 0;  
+}
+
+fieldset {
+    border: none;
+}  
+
+label {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 1.5rem;
+}
+
+/*  ESTAS INSTRUCCIONES INDICAN CÓMO SE COMPORTARÁ EL FORMULARIO EN DISPOSITIVOS 
+    EXTRA PEQUEÑOS (TELÉFONOS, DE 750px Y MENOS)  */    
+@media only screen and (max-width: 750px) {
+    .formulario-25, 
+    .formulario-75,
+    input[type=submit],
+    input[type=reset] {
+        width: 100%;
+    }
+    legend {  
+        margin: 1rem 0 0;  
+    }    
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO DE TABLA (#contenedor-tabla)  */
+#contenedor-tabla {
+    overflow: auto;
+}
+
+table {
+    font-size: 1.4rem; 
+    border-collapse: collapse;
+}
+
+th {
+    padding: 2rem 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #5f5f5f;  
+    border-right: 0.1rem solid white;
+}
+
+th:last-child {
+    border-right: none;    
+}  
+
+td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 0.1rem solid #5f5f5f;    
+}
+
+tr {
+    color: black;
+    font-weight: 100;
+}
+  
+tr:nth-child(even) {    
+    background-color: #ededed;
+}  
+
+tr:nth-child(odd) {
+    background-color: white;
+} 
+  
+tr:hover {
+    background-color: rgb(175, 225, 255);
+} 
+
+/* ********** ********** ********** ********** ********** */
+/*  FORMATO MENSAJE DE ALERTA.  */
+.alerta {	
+    margin-bottom: 1.5rem;
+    padding: 2rem 2rem 1rem;
+    color: rgb(175, 0, 0);
+    background-color: rgba(175, 0, 0, 0.15);
+    border: 0.25em solid rgb(175, 0, 0);
+    border-radius: 1rem;
+    background-image: url("../iconos/alerta.svg");
+    background-size: 2rem;
+    background-position: top 2.1rem left 2rem;
+    background-repeat: no-repeat;
+}
+
+.alerta p {    
+    font-family: Cambria, "Times New Roman", serif;
+    font-size: 1.8em;    
+}
+
+.alerta p:first-child {
+    text-indent: 2.5rem;
+}
+
+.alerta a {
+    color: rgb(0, 100, 255);
+    text-decoration: none;
+}
+
+.alerta a:hover {
+    color: rgb(0, 0, 255);
+}
+/* ********** ********** ********** ********** ********** */

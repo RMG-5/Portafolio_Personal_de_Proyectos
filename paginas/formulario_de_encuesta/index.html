@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Ejercicio de Formulario de Encuesta Bancaria"/>
+        <title>Formulario de Encuesta HeXaBanco</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <body>
+        <header>
+            <h1 id="title">Formulario de Encuesta <span class="fuente-banco">HeXaBanco</span></h1>
+            <p id="description">Tu opinión es muy importante para <span class="fuente-banco">HeXaBanco</span>
+            <br/>
+            llena el siguiente formulario y ayúdanos a seguir mejorando</p>            
+        </header>        
+        <main>   
+            <form id="survey-form">
+                <hr/>                     
+                <p>Por favor, completa los siguientes campos con tus datos personales</p>               
+                    <label id="name-label" for="name"><span class="campo-requerido">*</span>Nombre(s):</label>
+                        <input id="name" name="name" type="text" placeholder="Introduce tu(s) nombre(s)" required/>
+                    <label for="surname"><span class="campo-requerido">*</span>Apellidos:</label>
+                        <input id="surname" name="surname" type="text" placeholder="Introduce tus apellidos" required/>
+                    <label id="number-label" for="number">Edad:</label>
+                        <input id="number" name="number" type="number" min="18" max="99" placeholder="Introduce tu edad" required/>
+                    <label id="email-label" for="email"><span class="campo-requerido">*</span>Email:</label>
+                        <input id="email" name="email" type="email" placeholder="email@dominio.com" required/>
+                    <label for="phone">Teléfono:</label>
+                        <input id="phone" name="phone" type="tel" placeholder="00-00-00-00-00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+                    <label for="state"><span class="campo-requerido">*</span>Estado:</label>
+                        <select id="dropdown" name="state" required>
+                            <option value="" disabled selected>Estado de residencia</option>
+                            <option value="estado-de-mexico">Estado de México</option>
+                            <option value="guanajuato">Guanajuato</option>
+                            <option value="guerrero">Guerrero</option>
+                            <option value="jalisco">Jalisco</option>
+                            <option value="michoacan">Michoacán</option>                    
+                            <option value="queretaro">Queretaro</option>
+                        </select>
+                <p>(<span class="campo-requerido">*</span>) Estos campos son obligatorios</p>
+                <hr/>
+                <p>¿Cuál es tu tipo de cuenta <span class="fuente-banco">HeXaBanco</span>?</p>
+                    <div class="grupo"><input id="cuenta-personal" name="tipo-cuenta" type="radio" value="cuenta-personal">
+                        <label for="cuenta-personal">Cuenta Personal</label></div> 
+                    <div class="grupo"><input id="cuenta-empresarial" name="tipo-cuenta" type="radio" value="cuenta-empresarial">    
+                        <label for="cuenta-empresarial">Cuenta Empresarial</label></div>
+                    <div class="grupo"><input id="no-cliente" name="tipo-cuenta" type="radio" value="no-cliente">     
+                        <label for="no-cliente">Aun no soy cliente</label></div>                         
+                <hr/>     
+                <p>¿En cuáles de nuestros créditos estas interesado?</p>
+                    <div class="grupo"><input id="credito-personal" name="tipo-credito" type="checkbox" value="credito-personal">
+                        <label for="credito-personal">Crédito personal</label></div>  
+                    <div class="grupo"><input id="credito-empresarial" name="tipo-credito" type="checkbox" value="credito-empresarial">    
+                        <label for="credito-empresarial">Crédito empresarial</label></div>  
+                    <div class="grupo"><input id="credito-hipotecario" name="tipo-credito" type="checkbox" value="credito-hipotecario">    
+                        <label for="credito-hipotecario">Crédito hipotecario</label></div>
+                    <div class="grupo"><input id="credito-automotriz" name="tipo-credito" type="checkbox" value="credito-automotriz">     
+                        <label for="credito-automotriz">Crédito automotriz</label></div>                         
+                <p>¿Te gustaría recibir ofertas de los créditos en lo que estas interesado?</p>
+                    <div class="grupo"><input id="si-ofertas" name="ofertas" type="radio" value="si-ofertas" Checked>
+                        <label for="si-ofertas">Si</label></div> 
+                    <div class="grupo"><input id="no-ofertas" name="ofertas" type="radio" value="no-ofertas">      
+                        <label for="no-ofertas">No</label></div>                       
+                <hr/> 
+                <p>¿Qué medios utilizas para acceder a los servicios de <span class="fuente-banco">HeXaBanco</span>?</p>
+                    <div class="grupo"><input id="app-movil" name="medio-acceso" type="checkbox" value="app-movil">
+                        <label for="app-movil">Aplicación móvil</label></div>  
+                    <div class="grupo"><input id="web-escritorio" name="medio-acceso" type="checkbox" value="web-escritorio">    
+                        <label for="web-escritorio">Página web</label></div>
+                    <div class="grupo"><input id="sucursal" name="medio-acceso" type="checkbox" value="sucursal">     
+                        <label for="sucursal">Sucursal</label></div>                         
+                <hr/>
+                <p>Te invitamos a que nos dejes un comentario o sugerencia</p>
+                    <textarea name="mensaje" style="width:100%; height:8em;" placeholder="Escribe tu mensaje..."></textarea><br>
+                    <input id="reset" type="reset" value="Reset Fields">
+                    <input id="submit" type="submit" value="Submit">                
+            </form>
+        </main>
+        <div id="logo"></div>
+    </body>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+</html>

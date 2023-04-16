@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Escena de Super Mario Bros animada con CSS"/>
+	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <title>Escenario Super Mario Bros</title>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <style>
+        body {
+	        background-color: #858585;	        
+	        font-size: 62.5%;	                  
+        }
+
+		h1 {
+			position: absolute;
+			top: 0.1em;
+			left: 0.4em;			
+			border-bottom: 1px dashed black;	
+			font-size: 4em;		
+			font-family: "Arial Black";
+			color: rgba(0, 0, 255, 0.4);
+			z-index: 2;
+    	}
+
+        .descripcion {
+            height: 46em;
+            width: 95em;
+			margin: 5em auto;
+            padding: 2.5em;
+            background-color: #4f4f4f;          
+            border-radius: 2em;
+	        box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2), 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.4);            
+        }
+
+        p {
+            padding-bottom: 1em;
+	        font-size: 1.65em;
+            font-family: Tahoma;
+            text-align: justify;
+            text-indent: 1.25em;
+            color: #efefef;
+	    }
+        
+        a {
+            color: hsl(30, 100%, 50%);
+            text-decoration: none; 
+        }				
+	</style>	
+</head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+<body>	
+	<header>
+		<h1>Diseño web receptivo heredado...</h1>	
+    </header>
+
+		<main id="escenario">			
+			<div id="titulo">
+				<h2>Animaciones en CSS</h2>
+			</div>
+			
+			<div id="escena-superior">			
+				<div id="cortina-superior"></div>
+				
+				<div class="rectangulo-s rectangulo-01"></div>
+				<div class="rectangulo-s rectangulo-02"></div>
+				<div class="rectangulo-s rectangulo-03"></div>
+				
+				<div id="personaje-01">	</div>
+				
+				<div class="bloque misterio bloque-01"></div>
+				<div class="bloque ladrillo bloque-02"></div>
+				<div class="bloque misterio bloque-03"></div>
+				<div class="bloque ladrillo bloque-04"></div>
+				<div class="bloque misterio bloque-05"></div>
+				<div class="bloque misterio bloque-06"></div>
+				<div class="bloque ladrillo bloque-07"></div>
+				<div class="bloque ladrillo bloque-08"></div>
+				<div class="bloque misterio bloque-09"></div>
+				
+				<div id="moneda-01"></div>
+				
+				<div id="enemigo-01"></div>
+				
+				<div class="tuberia tuberia-01"></div>	
+				
+				<div id="sol"></div>
+				
+				<div class="nube nube-01"></div>
+				<div class="nube nube-02"></div>
+				<div class="nube nube-03"></div>
+			</div>
+			
+			<div id="escena-inferior">				
+				<div id="cortina-inferior"></div>
+				
+				<div class="rectangulo-i rectangulo-11"></div>
+				<div class="rectangulo-i rectangulo-12"></div>
+				<div class="rectangulo-i rectangulo-13"></div>
+				
+				<div id="personaje-11"></div>
+				
+				<div class="bloque ladrillo bloque-11"></div>
+				<div class="bloque ladrillo bloque-12"></div>
+				<div class="bloque ladrillo bloque-13"></div>
+				<div class="bloque misterio bloque-14"></div>
+				<div class="bloque misterio bloque-15"></div>
+				
+				<div id="moneda-11"></div>
+				
+				<div id="enemigo-11"></div>
+				<div id="enemigo-12"></div>
+				
+				<div class="tuberia tuberia-11"></div>
+				
+				<div id="banderin"></div>
+				
+				<div id="luna"></div>	
+				
+				<div id="estrella-01"></div>
+				<div id="estrella-02"></div>
+				<div id="estrella-03"></div>
+				<div id="estrella-04"></div>
+				<div id="estrella-05"></div>
+				<div id="estrella-06"></div>
+				<div id="estrella-07"></div>
+				<div id="estrella-08"></div>
+				<div id="estrella-09"></div>
+				<div id="estrella-10"></div>			
+			</div>			
+		</main>
+
+		<div class="descripcion">
+			<p>Sin lugar a dudas, uno de los temas que más me gusto del curso de <strong>Diseño web receptivo heredado,
+				</strong> fue el de las <strong>animaciones,</strong> es un tema que siempre me ha llamada la atención, 
+				incluso he realizado varios trabajos de animación, pero siempre en programas especializados en el tema, 
+				por ese motivo cuando vi que en CSS se podían hacer pequeñas <strong>animaciones,</strong> me dije y porque 
+				no intentarlo, así que en cuanto terminé el proyecto anterior, decidí profundizar un poco en el tema, 
+				realizando un proyecto enfocado en las <strong>animaciones.</strong> 
+			<p>Después de realizar un par de prototipos y mientras hacía rebotar una pelota en la pantalla de la computadora, 
+				sus rebotes me recordaron a un <em>clásico videojuego,</em> el cual no necesita presentación y en ese momento 
+				supe que mi proyecto sería un pequeño tributo a dicho videojuego, por cierto, no te preocupes si no sabes 
+				jugar, ya que no tienen que hacer nada y, sin embargo, nunca perderán.</p>
+			<p>Al principio fue complicado que los diferentes elementos cobraran vida, he interactuaran unos con otros, 
+				pero después de varios intentos, comencé a entender cómo funcionan las <strong>animaciones</strong> en CSS y 
+				no hay nada más que explicar, después de casi veinte horas de trabajo (entre los prototipos y trabajo final), 
+				creo que el resultado habla por sí solo.</p>
+			<p>Tema aparte, quiero comentar que este fue el último trabajo que realice a la par del curso de <strong>Diseño 
+				web receptivo heredado, </strong> y aunque al principio me decepcione un poco porque el curso cambio de nombre 
+				y dejo de ser parte de las <u><em>certificaciones,</em></u> rápidamente entendí que la web está en constante 
+				cambio y que, si pienso seguir adentrándome en este campo, los cambios serán más una constante que una 
+				casualidad, por lo que decidí terminar el curso e inmediatamente comenzar con el  nuevo curso de <strong>
+				Diseño web receptivo.</strong> Así que solo me queda dar las gracias <strong><a target="_blank" 
+				href="https://www.freecodecamp.org/learn/">FreeCodeCamp</a></strong>, por sus excelentes cursos y nos vemos 
+				en el siguiente, ya que soy nuevo en esto y los tomare en orden.</p>				
+		</div>
+</body>
+</html>

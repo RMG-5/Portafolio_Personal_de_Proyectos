@@ -1,0 +1,302 @@
+/* HOJA DE ESTILOS "PAGINA DE DOCUMENTACION TECNICA" */
+
+/* ********** ********** ********** ********** ********** */
+/*  INSTRUCCIONES GENERALES.  */
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+html {    
+    background: #efefef;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%; 
+    line-height: 1.25;   
+}
+
+/*  AREA DE NAVEGACION.  */
+#navbar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 32rem;
+    background: #2f2f2f;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9rem;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 2.7rem;
+    font-weight: 650; 
+    color: white;
+    border-bottom: 0.1rem solid #aaaaaa;
+}
+
+#navbar ul {
+    height: calc(100vh - 9rem);
+    overflow-x: hidden;
+}
+
+#navbar li {
+    position: relative;
+}
+
+#navbar a {
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 550;
+    text-decoration: none;	
+    color: white;   
+    border-bottom: 0.1rem solid #aaaaaa;   
+}
+
+#navbar a:hover {
+    color: black;
+    background-color: #dedede;
+    border-bottom: 0.5rem solid red;
+}
+
+.navbar-desple:hover .con-navbar-desple {
+    display: block;    
+}
+
+.con-navbar-desple {
+    display: none;      
+    height: 6rem;
+    width: 32rem;
+    position: absolute;
+    z-index: 1;
+}
+
+#navbar .nav-link-desple {
+    color: white;
+    background: #5f5f5f;
+    border-bottom: 0.1rem solid white;
+}
+
+/*  AREA DE EXPOSICION.  */
+#main-doc {
+    position: relative;
+    margin-left: 32rem; 
+    padding: 2rem 2% 4rem;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 2.7rem;
+    font-weight: 600;
+}
+
+h3 {
+    padding: 1rem 1.5%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 550;
+}
+
+h4 {
+    padding: 1rem 1.5%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+p {
+    padding: 0.5rem 3.5%;
+    font-size: 1.6rem;
+}
+
+code {
+    display: block;
+    margin: 1rem 1rem 1rem 6%;
+    padding: 0 2rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;   
+    white-space: pre-line;
+    background: #cdcdcd;
+    border-radius: 0.5rem;
+}
+
+.comentario {
+    margin: 1rem 1rem 1rem 6%;
+    padding: 3rem 2rem;
+    font-size: 1.7rem;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background: #2f2f2f; 
+    border-radius: 0.5rem;   
+}
+
+article ul li {
+    margin-left: 7%;
+    padding: 0.25rem;
+    font-size: 1.7rem;
+    list-style: square;
+}
+
+.rojo {
+    color: red;
+    font-weight: bold;
+}
+
+hr {
+    height: 0.5rem;
+    margin: 1rem 1% 1rem 0;    
+    background: linear-gradient(90deg, black 0%, black 75%, rgb(225, 0, 0) 75%, rgb(225, 0, 0) 100%);
+    transform: skewX(-45deg);
+    border: none;
+}
+
+table {
+    width: calc(100% - 4.5rem);
+    margin: 1rem 1rem 1rem 3.5%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 1.25rem 1rem;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: white;
+    background: #4f4f4f;
+    border-right: 1px solid white;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    padding: 0.75rem 1rem;
+    font-size: 1.5rem;
+    border: 1px solid black; 
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+a:link {
+    font-weight: bold;
+    color: rgb(0, 155, 255);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 155, 255);
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: red;
+}
+
+#color-01 {
+    margin: 1rem 1rem 0 6%;
+    padding: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: #000000;
+}
+
+#color-02 {
+    margin: 0 1rem 0 6%;
+    padding: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: #555555;
+}
+
+#color-03 {
+    margin: 0 1rem 0 6%;
+    padding: 1.5rem;
+    font-weight: bold;
+    background: #aaaaaa;
+}
+
+#color-04 {
+    margin: 0 1rem 1rem 6%;
+    padding: 1.5rem;
+    font-weight: bold;
+    background: #ffffff;
+}
+
+/*  INSTRUCCIONES @media.  */
+@media only screen and (max-width: 800px) {
+    #navbar {
+        display: block;
+        height: 6rem;
+        width: 100%;
+        border-bottom: 0.5rem solid white;
+        z-index: 1;
+    }
+    h1 {
+        height: 6rem;
+    }
+    #navbar:hover #men-pan-peq {
+        display: block;
+    }
+    #men-pan-peq {
+        display: none;
+        height: calc(100vh - 6rem);
+        width: 32rem;
+        position: absolute;
+        background: #4f4f4f;
+    }
+    #navbar a {
+        height: 5rem; 
+    }
+    #navbar .nav-link-desple {
+        background: #7f7f7f;
+        border-bottom: 0.1rem solid white;
+    }
+    #main-doc {
+        position: absolute;
+        top: 6rem;
+	    padding-top: 0;
+        margin-left: 0;
+    }
+    h2 {
+	    padding-top: 7rem;
+    }
+    table {
+        width: calc(100% - 2.5rem);
+        margin: 1rem 1rem 1rem 1.5%;
+    }
+}
+
+/*  LOGO.  */
+#logo {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    height: 3em;
+    width: 3em;
+    background-image: url("../imagenes/logo_r_mono.svg");
+    background-size: contain;
+    background-position: center;   
+    background-repeat: no-repeat;
+    filter: opacity(50%);
+}
+/* ********** ********** ********** ********** ********** */
+
+
+

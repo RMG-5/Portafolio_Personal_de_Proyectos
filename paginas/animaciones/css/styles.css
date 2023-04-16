@@ -1,0 +1,1078 @@
+/* HOJA DE ESTILOS "ANIMACIONES CSS" */
+
+/* ********** ********** ********** ********** ********** */
+/*  ESCENARIO GENERAL  */ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#escenario {
+    position: relative;
+    height: 92em;
+    width: 190em;
+    margin: auto;			
+    transform: scale(100%); /*INTRODUCIR PORCENTAJE DE ESCALA REQUERIDA*/
+}
+
+#escenario * {
+    position: absolute;
+}
+
+#escenario #titulo {
+    white-space: nowrap;
+    height: 2.5em;
+    width: 17em;
+    top: 50%;
+    left: 50%;
+    margin: -1.25em 0 0 -8.5em;
+    color: #2f2f2f;
+    font-size: 2.5em;
+    font-family: "Arial Black";	
+    animation-name: entrada-titulo;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    z-index: 5;
+}
+
+@keyframes entrada-titulo {
+    10% {
+        color: transparent;
+        transform: scale(450%);
+    }
+    90% {
+        color: transparent;
+        transform: scale(450%);
+    }		
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  ESCENA SUPERIOR  */
+#escena-superior {
+    top: 0;
+    left: 0;
+    height: 46em;
+    width: 190em;
+    background: #66c2ff;
+}
+
+#cortina-superior {
+    top: 0;
+    left: 0;
+    height: 46em;
+    width: 190em;
+    background: rgba(225, 0, 0, 1);
+    animation-name: apertura-superior;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    z-index: 4;
+}
+
+@keyframes apertura-superior {
+    10% {
+        left: 0;
+        width: 190em;
+        opacity: 0.9;
+    }
+    20% {
+        left: 190em;
+        width: 0;
+        opacity: 0.5;
+    }
+    50% {
+        left: 190em;
+        width: 0;
+        opacity: 0.5;
+    }
+    60% {
+        left: 0;
+        width: 190em;
+        opacity: 0.9;
+    }
+    70% {
+        left: 0;
+        width: 190em;
+        opacity: 1;
+    }
+}
+
+.rectangulo-s {
+    height: 7.5em;
+    width: 20em;    
+    border: 0.25em solid black;
+    border-radius: 1em;
+    box-shadow: 1.5em 1.5em black;
+}
+
+.rectangulo-01 {
+    bottom: 15em;
+    left: 80em;
+    background: white;
+}
+
+.rectangulo-02 {
+    bottom: 20em;
+    left: 110em;
+    background: #ffbdb5;
+}
+
+.rectangulo-03 {
+    bottom: 25em;
+    left: 140em;
+    background: #4ade4a;
+}
+
+#personaje-01 {
+    bottom: 0;
+    left: 1em;
+    height: 9em;
+    width: 5em;
+    background-image: url("../imagenes/paper_mario_01.png");
+    background-size: contain;
+    animation-name: animacion-personaje-01;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+    
+@keyframes animacion-personaje-01 {
+    20% {
+        bottom: 0;
+        left: 1em;
+    }
+    23% {
+        bottom: 0;
+        left: 25em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    24% {
+        bottom: 11em;
+        left: 30em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_02.png");
+        background-size: contain;
+    }
+    25% {
+        bottom: 0;
+        left: 35em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    29% {
+        bottom: 0;
+        left: 60em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    31.5% {
+        bottom: 22.5em;
+        left: 80em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_02.png");
+        background-size: contain;
+    }
+    34% {
+        bottom: 0;
+        left: 100em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    36% {
+        bottom: 0;
+        left: 110em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    38% {
+        bottom: 17.5em;
+        left: 120em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_02.png");
+        background-size: contain;
+    }
+    39.75% {
+        bottom: 5em;
+        left: 132.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    40.25% {
+        bottom: 5em;
+        left: 132.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    42% {
+        bottom: 17.5em;
+        left: 145em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_02.png");
+        background-size: contain;
+    }
+    44% {
+        bottom: 0em;
+        left: 155em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    45% {
+        bottom: 0em;
+        left: 162.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    47% {
+        bottom: 17em;
+        left: 177.5em;
+        transform: scaleY(100%);
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_02.png");
+        background-size: contain;
+    }
+    49% {
+        bottom: 8.5em;
+        left: 180.5em;
+        transform: scaleY(110%);
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_01.png");
+    }
+    50% {
+        bottom: 0em;
+        left: 180.5em;
+        transform: scaleY(50%);
+    }
+    100% {
+        bottom: 0em;
+        left: 180.5em;
+        transform: scaleY(50%);
+    }
+}
+
+.bloque {
+    height: 5em;
+    width: 5em;	
+}
+
+.misterio {
+    background-image: url("../imagenes/bloque_misterio.png");
+    background-size: contain;
+    background-color: #F2CB02;
+}
+
+.ladrillo {
+    background-image: url("../imagenes/bloque_ladrillo.png");
+    background-size: contain;
+    background-color: #A85832;
+}
+
+.bloque-01 {
+    bottom: 20em;
+    left: 20em;	
+}
+
+.bloque-02 {
+    bottom: 20em;
+    left: 25em;
+}
+
+.bloque-03 {
+    bottom: 20em;
+    left: 30em;
+    animation-name: animacion-bloque-03;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+    
+@keyframes animacion-bloque-03 {
+    24% {
+        background-image: url("../imagenes/bloque_misterio.png");
+        bottom: 20em;
+    }
+    24.5% {
+        background-image: none;
+        bottom: 20.5em;
+    }
+    25% {
+        background-image: none;
+        bottom: 20em;
+    }
+    100% {
+        background-image: none;	
+    }
+}
+
+#moneda-01 {
+    bottom: 20.5em;
+    left: 30.5em;
+    height: 4em;
+    width: 4em;
+    background-image: url("../imagenes/moneda_dorada.png");
+    background-size: contain;
+    animation-name: animacion-moneda-01;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+    
+@keyframes animacion-moneda-01 {
+    24% {
+        bottom: 20.5em;
+        left: 30.5em;
+    }
+    24.5% {
+        bottom: 25em;
+        left: 30.5em;
+    }
+    25.5% {
+        background-image: url("../imagenes/moneda_dorada.png");
+    }
+    26.5% {
+        background-image: none;
+    }
+    100% {
+        bottom: 20.5em;
+        left: 30.5em;
+        background-image: none;	
+    }
+}
+
+.bloque-04 {
+    bottom: 20em;
+    left: 35em;
+}
+
+.bloque-05 {
+    bottom: 20em;
+    left: 40em;
+}
+
+#enemigo-01 {
+    bottom: 0;
+    left: 85em;
+    height: 9em;
+    width: 7em;
+    background-image: url("../imagenes/planta_pirana_01.png");
+    background-size: contain;
+    z-index: 1;
+}
+
+#enemigo-01::after {
+    position: absolute;
+    content: "";
+    bottom: 6em;
+    left: 0.25em;
+    height: 0.75em;
+    width: 0.75em;
+    background: white;
+    border: 0.25em solid yellow;
+    border-radius: 50%;
+    box-shadow: 0.25em 0.25em 0.5em red, 0.25em -0.25em 0.5em red, -0.25em 0.25em 0.5em red, -0.25em -0.25em 0.5em red;
+    animation-name: bola-fuego-01;
+    animation-duration: 4s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes bola-fuego-01 {
+    0% {
+        bottom: 6em;
+        left: 0.25em;
+    }
+    100% {
+        bottom: 44em;
+        left: -65em;
+        transform: scale(175%);
+    }
+}
+
+.bloque-06 {
+    bottom: 0;
+    left: 125em;
+}
+
+.bloque-07 {
+    bottom: 0;
+    left: 130em;
+}
+
+.bloque-08 {
+    bottom: 0;
+    left: 135em;
+}
+
+.bloque-09 {
+    bottom: 0;
+    left: 140em;
+}	
+
+.tuberia {
+    height: 4em;
+    width: 10em;
+    background: linear-gradient(90deg, #3cc931 15%, #6bf270 25%, #21831a 60%, #17601d 90%, #69d682);
+    z-index: 3;
+}
+
+.tuberia::before {
+    position: absolute;
+    content: "";
+    bottom: 4em;
+    right: -1em;
+    height: 3em;
+    width: 12em;
+    background: linear-gradient(90deg, #3cc931 15%, #6bf270 25%, #21831a 60%, #17601d 90%, #69d682);
+}
+
+.tuberia-01 {
+    bottom: 0;
+    left: 178em;
+}
+        
+#sol {
+    top: 5em;
+    left: 90em;
+    height: 7.5em;
+    width: 7.5em;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0.5em 0.5em 3em gold, 0.5em -0.5em 3em gold, -0.5em 0.5em 3em gold, -0.5em -0.5em 3em gold;
+}
+
+.nube {
+    height: 10em;
+    width: 12.5em;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0.5em 0.5em 1em white, 0.5em -0.5em 1em white, -0.5em 0.5em 1em white, -0.5em -0.5em 1em white;
+}
+
+.nube::before {
+    position: absolute;
+    content: "";
+    top: 1.5em;
+    left: -3em;
+    height: 7em;
+    width: 7em;
+    background: white;
+    border-radius: 50%;
+    box-shadow: -0.5em -0.5em 1em white, -1em -0.25em 1em white, -0.5em 0.5em 1em white, -1em 0.25em 1em white;
+}
+
+.nube::after {
+    position: absolute;
+    content: "";
+    top: 1.5em;
+    left: 9em;
+    height: 7em;
+    width: 7em;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0.5em -0.5em 1em white, 1em -0.25em 1em white, 0.5em 0.5em 1em white, 1em 0.25em 1em white;
+}
+
+.nube-01 {
+    top: 6em;
+    left: 30em;   
+}
+
+.nube-02 {
+    top: 6em;
+    left: 157em;
+}
+
+.nube-03 {
+    top: 10em;
+    left: 95em;
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  ESCENA INFERIOR  */
+#escena-inferior {
+    top: 46em;
+    left: 0;
+    height: 46em;
+    width: 190em;
+    background: linear-gradient(#000000, #000099, #66c2ff);
+}
+
+#cortina-inferior {
+    top: 0;
+    left: 0;
+    height: 46em;
+    width: 190em;
+    background: rgba(0, 150, 0, 1);
+    animation-name: apertura-inferior;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    z-index: 4;
+}
+
+@keyframes apertura-inferior {
+    40% {
+        left: 0;
+        width: 190em;
+        opacity: 1;
+    }
+    50% {
+        left: 0;
+        width: 190em;
+        opacity: 0.9;
+    }
+    60% {
+        left: 0;
+        width: 0;
+        opacity: 0.5;
+    }
+    90% {
+        left: 0;
+        width: 0;
+        opacity: 0.5;
+    }
+    100% {
+        left: 0;
+        width: 190em;
+        opacity: 0.9;
+    }
+}
+
+.rectangulo-i {
+    bottom: 0;   
+    border: 0.25em solid black;
+    border-radius: 1em;
+    box-shadow: 1.5em 0 black;
+}
+
+.rectangulo-11 {
+    left: 20em;
+    height: 27.5em;
+    width: 27.5em;	
+    background: white;
+}
+
+.rectangulo-12 {
+    left: 35em;
+    height: 22.5em;
+    width: 22.5em;	
+    background: #ffbdb5;
+}
+
+.rectangulo-13 {
+    left: 50em;
+    height: 17.5em;
+    width: 17.5em;	
+    background: #4ade4a;
+}
+
+#personaje-11 {
+    bottom: 2.5em;
+    left: 180.5em;
+    height: 9em;
+    width: 5em;
+    background-image: url("../imagenes/paper_mario_11.png");
+    background-size: contain;
+    animation-name: animacion-personaje-11;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    z-index: 2;
+}
+
+@keyframes animacion-personaje-11 {
+    0% {
+        bottom: 0em;
+        left: 180.5em;
+        transform: scaleY(50%);
+    }
+    60% {
+        bottom: 0em;
+        left: 180.5em;
+        transform: scaleY(50%);
+    }
+    60.5% {
+        bottom: 7em;
+        left: 180.5em;
+        transform: scaleY(110%);
+    }
+    61% {
+        bottom: 7em;
+        left: 180.5em;
+        transform: scaleY(100%);
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    63% {
+        bottom: 22.5em;
+        left: 165em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    64% {
+        bottom: 17.5em;
+        left: 155em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    64.5% {
+        bottom: 17.5em;
+        left: 155em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    65.5% {
+        bottom: 22.5em;
+        left: 145em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    68% {
+        bottom: 0;
+        left: 125em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    69.5% {
+        bottom: 0;
+        left: 115em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    72.5% {
+        bottom: 22.5em;
+        left: 100em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    75.5% {
+        bottom: 0;
+        left: 80em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    76.5% {
+        bottom: 0;
+        left: 75em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    79.5% {
+        bottom: 21em;
+        left: 60em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    82.5% {
+        bottom: 0;
+        left: 37.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    85% {
+        bottom: 0;
+        left: 20em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    87% {
+        bottom: 30.5em;
+        left: 1.5em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    87.5% {
+        bottom: 30.5em;
+        left: 1.5em;
+        width: 6.5em;			
+        background-image: url("../imagenes/paper_mario_12.png");
+        background-size: contain;
+    }
+    90% {
+        bottom: 0;
+        left: 1.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+    100% {
+        bottom: 0;
+        left: 1.5em;
+        width: 5em;
+        background-image: url("../imagenes/paper_mario_11.png");
+    }
+}
+
+.bloque-11 {
+    bottom: 12.5em;
+    left: 160em;
+}
+
+.bloque-12 {
+    bottom: 12.5em;
+    left: 155em;
+}
+
+.bloque-13 {
+    bottom: 12.5em;
+    left: 150em;
+}
+
+#enemigo-11 {
+    bottom: 0;
+    left: 100em;
+    height: 9em;
+    width: 7em;
+    background-image: url("../imagenes/planta_pirana_11.png");
+    background-size: contain;
+}
+
+#enemigo-11::after {
+    position: absolute;
+    content: "";
+    bottom: 6em;
+    left: 5.5em;
+    height: 0.75em;
+    width: 0.75em;
+    background: white;
+    border: 0.25em solid yellow;
+    border-radius: 50%;
+    box-shadow: 0.25em 0.25em 0.5em red, 0.25em -0.25em 0.5em red, -0.25em 0.25em 0.5em red, -0.25em -0.25em 0.5em red;
+    animation-name: bola-fuego-11;
+    animation-duration: 5s;
+    animation-delay: 30s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes bola-fuego-11 {
+    0% {
+        bottom: 6em;
+        left: 5.5em;
+    }
+    100% {
+        bottom: 10em;
+        left: 88em;
+        transform: scale(175%);
+    }
+}
+
+#enemigo-12 {
+    bottom: 0;
+    left: 40em;
+    height: 9em;
+    width: 7em;
+    background-image: url("../imagenes/shy_guy_11.png");
+    background-size: contain;
+    animation-name: animacion-enemigo-12;
+    animation-duration: 5s;
+    animation-delay: 27.5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes animacion-enemigo-12 {
+    0% {
+        left: 40em;
+    }
+    10% {
+        left: 40em;
+    }
+    50% {
+        left: 80em;
+        background-image: url("../imagenes/shy_guy_11.png");
+    }
+    50.5% {
+        left: 80em;
+        background-image: url("../imagenes/shy_guy_12.png");
+    }
+    60% {
+        left: 80em;
+        background-image: url("../imagenes/shy_guy_12.png");
+    }
+    99.5% {
+        left: 40em;
+        background-image: url("../imagenes/shy_guy_12.png");
+    }
+    100% {
+        left: 40em;
+        background-image: url("../imagenes/shy_guy_11.png");
+    }
+}
+
+.bloque-14 {
+    bottom: 30em;
+    left: 65em;
+}
+
+.bloque-15 {
+    bottom: 30em;
+    left: 60em;
+    animation-name: animacion-bloque-15;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+    
+@keyframes animacion-bloque-15 {
+    79.5% {
+        background-image: url("../imagenes/bloque_misterio.png");
+        bottom: 30em;
+    }
+    80% {
+        background-image: none;
+        bottom: 30.5em;
+    }
+    80.5% {
+        background-image: none;
+        bottom: 30em;
+    }
+    100% {
+        background-image: none;	
+    }
+}
+
+#moneda-11 {
+    bottom: 30.5em;
+    left: 60.5em;
+    height: 4em;
+    width: 4em;
+    background-image: url("../imagenes/moneda_dorada.png");
+    background-size: contain;
+    animation-name: animacion-moneda-11;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+    
+@keyframes animacion-moneda-11 {
+    79.5% {
+        bottom: 30.5em;
+        left: 60.5em;
+    }
+    80% {
+        bottom: 35em;
+        left: 60.5em;
+    }
+    81% {
+        background-image: url("../imagenes/moneda_dorada.png");
+    }
+    82% {
+        background-image: none;
+    }
+    100% {
+        bottom: 30.5em;
+        left: 60.5em;
+        background-image: none;	
+    }
+}
+
+.tuberia-11 {
+    bottom: 0;
+    left: 178em;
+}
+
+#banderin {
+    bottom: 0;
+    left: 1em;
+    height: 38em;
+    width: 0.5em;
+    background: green;
+}
+
+#banderin::before {
+    position: absolute;
+    content: "";
+    bottom: 35em;
+    left: 0.5em;
+    height: 3em;
+    width: 5em;
+    background: white;
+    animation-name: bajada-banderin;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+#banderin::after {
+    position: absolute;
+    content: "";
+    bottom: 37.9em;
+    left: -0.25em;
+    height: 1em;
+    width: 1em;
+    background: red;
+    border-radius: 50%;
+}
+
+@keyframes bajada-banderin {
+    87% {
+        bottom: 35em;
+    }
+    87.5% {
+        bottom: 35em;
+    }
+    90% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+#luna {
+    top: 8%;
+    left: 95em;
+    height: 7.5em;
+    width: 7.5em;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 2.25em 1em silver;
+}
+
+#estrella-01 {
+    top: 15%;
+    left: 40em;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-02 {
+    top: 18%;
+    left: 55em;
+    height: 0.75em;
+    width: 0.75em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-03 {
+    top: 8%;
+    left: 70em;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-04 {
+    top: 11%;
+    left: 90em;
+    height: 1.25em;
+    width: 1.25em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-05 {
+    top: 25%;
+    left: 110em;
+    height: 0.7em;
+    width: 0.7em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-06 {
+    top: 17%;
+    left: 130em;
+    height: 1.1em;
+    width: 1.1em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 1.1s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-07 {
+    top: 20%;
+    left: 150em;
+    height: 0.95em;
+    width: 0.95em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 0.95s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-08 {
+    top: 9%;
+    left: 140em;
+    height: 1.05em;
+    width: 1.05em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 1.05s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-09 {
+    top: 22%;
+    left: 80em;
+    height: 1.15em;
+    width: 1.15em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 1.15s;
+    animation-iteration-count: infinite;
+}
+
+#estrella-10 {
+    top: 13%;
+    left: 170em;
+    height: 0.85em;
+    width: 0.85em;
+    border-radius: 50%;
+    background: silver;
+    animation-name: destello;
+    animation-duration: 0.85s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes destello {
+    50% {
+        transform: scale(50%);
+        opacity: 0.5;
+    }
+}
+
+/* ********** ********** ********** ********** ********** */

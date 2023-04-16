@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Calculadora Estándar no funcional creada con CSS grid"/>
+    <title>Calculadora Estándar CSS grid</title>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 1400px;
+	        background-color: #858585;	        
+	        font-size: 62.5%;	                  
+        }
+
+        h1 {
+            display: inline-block;	        
+            margin: 0.4em 0.6em;
+	        border-bottom: 1px dashed black;	        	        
+            font-size: 4em;
+	        font-family: "Arial Black";
+            color: rgb(225, 0, 0);
+        }
+
+        h2 {	        	        
+            margin: 1em 2.5em;
+	        border-bottom: 2px solid red;
+            font-size: 2.5em;
+	        font-family: Arial;
+            font-weight: bold;
+            color: #1f1f1f;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
+            justify-items: center;            
+            grid-row-gap: 50px;  
+            margin: 8em 0;    
+        }
+
+        .descripcion {
+            height: 55em;
+            width: 39em;
+            padding: 2.5em;
+            background-color: #4f4f4f;          
+            border-radius: 2em;
+	        box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2), 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.4);            
+        }
+
+        p {
+            padding-bottom: 1em;
+	        font-size: 1.65em;
+            font-family: Tahoma;
+            text-align: justify;
+            text-indent: 1.25em;
+            color: #efefef;
+	    }
+        
+        a {
+            color: hsl(30, 100%, 50%);
+            text-decoration: none; 
+        }
+		
+/* ********** ********** ********** ********** ********** */
+/*  CALCULADORA ESTANDAR  */	
+	
+		* {
+			box-sizing: border-box;
+		}
+		
+		#calculadora {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr) 25%;
+			grid-template-rows: 20% repeat(6, 1fr);
+			grid-column-gap: 2%;
+			grid-row-gap: 1%;
+			height: 55em;
+			width: 39em;
+			margin: auto;
+			padding: 0.7%;
+			background: #eeeeee;
+			border: 1em solid #dddddd;
+			border-radius: 2em;
+			box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2), 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.4);
+			--fondo-pantalla: hsla(30, 25%, 15%, 1);
+			--color-pantalla-1: hsla(30, 100%, 50%, 1);
+			--color-pantalla-2: hsla(30, 75%, 95%, 0.95);
+			--fondo-numeros: hsla(30, 80%, 25%, 0.25);
+			--fondo-operadores: hsla(30, 80%, 25%, 0.85);
+			--fondo-adicionales: hsla(30, 80%, 25%, 0.55);
+			--color-numeros: hsla(30, 25%, 15%, 1);
+			--color-operadores: hsla(30, 75%, 95%, 0.95);
+			--color-adicionales: hsla(30, 100%, 80%, 1);
+			--esquina-botones: 0.15em;
+			--sombra-botones: 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.75);
+			--fuente-botones: monospace;
+			--grueso-fuente: normal;
+			--tamano-fuente-01: 400%;
+			--tamano-fuente-02: 300%;
+			transform: scale(100%); /*INTRODUCIR PORCENTAJE DE ESCALA REQUERIDA*/
+		}
+		
+		#pantalla {
+			display: grid;
+			grid-template-columns: 100%;
+			grid-template-rows: 40% 60%;
+			padding: 2.5% 5%;
+			background: var(--fondo-pantalla, #252525);
+			border: none;
+			border-radius: 0.4em;
+			box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.75);		
+			grid-column: 1/5;
+		}
+			
+		#pantalla_memoria { 
+			background: transparent;
+			color: var(--color-pantalla-1, #9a9a9a);   	
+			border: none;
+			font-family: monospace;
+			font-size: 300%;
+			text-align: right;
+		}
+		
+		#pantalla_actual {
+			background: transparent;
+			color: var(--color-pantalla-2, #efefef);    	
+			border: none;
+			font-family: monospace;	
+			font-size: 500%;
+			text-align: right;
+		}
+		
+		.numeros {
+			border: none;
+			background: var(--fondo-numeros, #a5a5a5);
+			color: var(--color-numeros, #3f3f3f);
+			border-radius: var(--esquina-botones, 8%);
+			box-shadow: var(--sombra-botones, 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.75));
+			font-family: var(--fuente-botones, Arial);
+			font-weight: var(--grueso-fuente, bold);
+			font-size: var(--tamano-fuente-01, 300%);
+		}
+		
+		#boton_mas_menos {    
+			font-size: var(--tamano-fuente-02, 250%);
+		}	
+			
+		.operadores {
+			border: none;
+			background: var(--fondo-operadores, #a5a5a5);
+			color: var(--color-operadores, #3f3f3f);
+			border-radius: var(--esquina-botones, 8%);
+			box-shadow: var(--sombra-botones, 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.75));
+			font-family: var(--fuente-botones, Arial);
+			font-weight: var(--grueso-fuente, bold);
+			font-size: var(--tamano-fuente-01, 300%);
+			margin-left: 5%;
+		}
+		
+		#boton_igual {
+			grid-column: 4/5;
+			grid-row: 6/8;
+		}
+		
+		.adicionales {
+			border: none;
+			background: var(--fondo-adicionales, #a5a5a5);
+			color: var(--color-adicionales, #3f3f3f);
+			border-radius: var(--esquina-botones, 8%);
+			box-shadow: var(--sombra-botones, 0.0625em 0.0625em 0.0625em rgba(0, 0, 0, 0.75));
+			font-family: var(--fuente-botones, Arial);
+			font-weight: var(--grueso-fuente, bold);
+			font-size: var(--tamano-fuente-02, 250%);
+		}	
+		
+		#calculadora .numeros:hover, 
+		#calculadora .operadores:hover, 
+		#calculadora .adicionales:hover { /* ESTAS INSTRUCCIONES SON UNICAS */
+			background: hsla(30, 100%, 50%, 1);
+			color: hsla(30, 25%, 15%, 1);
+			font-size: 500%;
+			cursor: pointer;
+			transform: scale(107%);
+		}	
+		
+		#calculadora .adicionales:hover,
+		#calculadora #boton_mas_menos:hover {
+			font-size: 400%;
+		}
+		
+		#calculadora .numeros:active {
+			background: var(--fondo-numeros, #a5a5a5);
+			color: var(--color-numeros, #3f3f3f);
+			font-size: var(--tamano-fuente-01, 300%);
+			transform: scale(100%);
+		}
+		
+		#calculadora #boton_mas_menos:active {
+			font-size: var(--tamano-fuente-02, 250%);
+		}
+		
+		#calculadora .operadores:active {
+			background: var(--fondo-operadores, #454545);
+			color: var(--color-operadores, #eeeeee);
+			font-size: var(--tamano-fuente-01, 300%);
+			transform: scale(100%);
+		}
+		
+		#calculadora .adicionales:active {
+			background: var(--fondo-adicionales, #707070);
+			color: var(--color-adicionales, #dddddd);
+			font-size: var(--tamano-fuente-02, 250%);
+			transform: scale(100%);
+		}
+			
+</style>	
+</head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+<body>	
+	<header>
+		<h1>Diseño web receptivo heredado...</h1>		
+	
+		<h2>Calculadora Estándar CSS grid.</h2>	
+    </header>
+
+    <main class="contenido">
+		<div id="calculadora">
+						
+			<div id="pantalla">
+				<input type="text" class="pantallas" id="pantalla_memoria">			
+				<input type="text" class="pantallas" id="pantalla_actual">
+			</div>	
+			
+			<input type="button" class="adicionales" id="boton_pi" value="π">
+			<input type="button" class="adicionales" id="boton_memoria" value="M">
+			<input type="button" class="adicionales" id="boton_resetear" value="C">
+			<input type="button" class="operadores" id="boton_dividir" value="÷">
+
+			<input type="button" class="adicionales" id="boton_porcentaje" value="%">
+			<input type="button" class="adicionales" id="boton_potencia" value="x²">
+			<input type="button" class="adicionales" id="boton_raiz" value="²√">
+			<input type="button" class="operadores" id="boton_multiplicar" value="x">	
+
+			<input type="button" class="numeros" id="boton_siete" value="7">
+			<input type="button" class="numeros" id="boton_ocho" value="8">
+			<input type="button" class="numeros" id="boton_nueve" value="9">
+			<input type="button" class="operadores" id="boton_restar" value="-">
+
+			<input type="button" class="numeros" id="boton_cuatro" value="4">
+			<input type="button" class="numeros" id="boton_cinco" value="5">
+			<input type="button" class="numeros" id="boton_seis" value="6">				
+			<input type="button" class="operadores" id="boton_sumar" value="+">	
+			
+			<input type="button" class="numeros" id="boton_uno" value="1">
+			<input type="button" class="numeros" id="boton_dos" value="2">
+			<input type="button" class="numeros" id="boton_tres" value="3">
+			
+			<input type="button" class="numeros" id="boton_mas_menos" value="+/-">		
+			<input type="button" class="numeros" id="boton_cero" value="0">
+			<input type="button" class="numeros" id="boton_punto" value=".">
+
+			<input type="button" class="operadores" id="boton_igual" value="=">			
+		</div>
+
+		<div class="descripcion">
+            <p>Para concluir el tema de la <em>calculadora,</em> realicé el proyecto empleando <strong>CSS grid				
+				</strong> y me sorprendió lo fácil que fue realizar el proyecto con este método, ya que la cantidad 
+				de código fue incluso ligeramente menor que con <strong>CSS flexbox,</strong> además de que no tuve 
+				que realizar ningún cambio al código <strong>html</strong> y los botones de la <em>calculadora</em> 
+				quedaron con la misma disposición que en el proyecto original.</p>
+			<p>El único inconveniente que tuve al realizar el proyecto de la <em>calculadora</em> con <strong>CSS 
+				grid,</strong> es que no encontré una forma de hacer que la propiedad <em>--grid-column-gap--</em>
+				permita que los espacios entre columnas sean de diferentes dimensiones, por lo que tuve que aplicar 
+				una solución que no me convenció del todo, pero siendo objetivo, creo que ese inconveniente era solo 
+				un capricho sin importancia, ya que se pudo solucionar fácilmente con un margen.</p>
+			<p>Este es el resultado de la <em>calculadora</em> creada con <strong>CSS grid,</strong> personalmente 
+				me gustó mucho este método e intentare aplicarlo en mis <em>proyectos de certificación.</em></p>
+
+			
+        </div>
+	</main>	
+</body>
+</html>

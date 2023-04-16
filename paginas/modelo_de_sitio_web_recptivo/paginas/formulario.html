@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->	
+    <head>
+        <meta charset="UTF-8">
+        <!--  width=device-width - establece el ancho de la página para seguir el ancho de pantalla del dispositivo.  -->
+        <!--  initial-scale=1.0 - establece el nivel de zoom inicial cuando el navegador carga la página por primera vez.  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Modelo básico de sitio web receptivo utilizando una vista de cuadrícula."/>
+        <title>Modelo de Sitio WEB Receptivo</title>
+        <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <body id="formulario">
+        <!--  ENCABEZADO.  -->
+        <div class="columna-p-12 columna-m-12 columna-g-12 columna-eg-12">
+            <header id="encabezado">
+                <h1>Soy el encabezado principal del sitio WEB</h1>
+            </header>            
+        </div>
+        <!-- ********** ********** ********** ********** ********** -->
+        <!--  AQUI INICIA LA SECCION ADAPTABLE.  --> 
+        <div id="seccion-adaptable">
+        <!-- ********** ********** ********** ********** ********** -->            
+            <!--  BARRA DE NAVEGACION SUPERIOR.  -->
+            <nav id="menu-horizontal">
+                <ul>
+                    <li>
+                        <a href="../index.html" class="boton-fijo-01">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="parrafos.html" class="boton-fijo-01">SOY FUNCIONAL</a>
+                    </li>
+                    <li class="menu-desple-01">
+                        <a href="#" class="boton-desple-01">DESPLEGABLE</a>
+                            <div class="con-men-desple-01">
+                                <a href="#" class="con-bot-desple-01">SUBMENU A</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU B</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU C</a>
+                            </div>
+                    <li>
+                        <a href="#" class="boton-fijo-01">MENU FIJO</a>
+                    </li>
+                    <li class="menu-desple-01">
+                        <a href="#" class="boton-desple-01 pagina-activa">DESPLEGABLE</a>
+                            <div class="con-men-desple-01">
+                                <a href="#" class="con-bot-desple-01">SUBMENU A</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU B</a>
+                                <a href="formulario.html" class="con-bot-desple-01 pagina-activa">SOY FUNCIONAL</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU C</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU D</a>                        
+                        </div>
+                </ul>
+            </nav>
+            <!--  BARRA DE NAVEGACIÓN LATERAL.  -->
+            <div class="columna-p-4 columna-m-3 columna-g-3 columna-eg-2">
+                <div id="menu-vertical">
+                    <ul>
+                        <li><a href="#">MENU LATERAL 01</a></li>
+                        <li><a href="#">MENU LATERAL 02</a></li>
+                        <li><a href="#">MENU LATERAL 03</a></li>
+                        <li><a href="tabla.html">SOY FUNCIONAL</a></li>
+                        <li><a href="#">MENU LATERAL 04</a></li>
+                    </ul>
+                </div>
+                <div class="imagen-muestra">Soy una imagen de muestra</div>
+                <div class="imagen-muestra">Soy otra imagen de muestra</div>
+            </div>
+            <!--  SECCIÓN PRINCIPAL.  -->
+            <div class="columna-p-8 columna-m-9 columna-g-5 columna-eg-7">
+                <main id="principal">
+                    <h2>Soy el título de la sección principal</h2>
+                        <p>Soy un párrafo de muestra y me repetiré algunas veces, para que puedas apreciar lo que pasa si la página excede la altura de la ventana gráfica.</p>
+                        <p>Soy un párrafo de muestra y me repetiré algunas veces, para que puedas apreciar lo que pasa si la página excede la altura de la ventana gráfica.</p>                        
+                    <!--  FORMULARIO DE EJEMPLO.  -->  
+                    <div id="contenedor-formulario">
+                        <form>
+                            <h4>Soy un formulario de ejemplo</h4>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="nombre">Nombre(s):</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre(s)..." required>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="apellidos">Apellidos:</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus Apellidos..." required>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <legend>Sexo:</legend>
+                                </div>        
+                                <fieldset>
+                                    <div class="formulario-75">
+                                        <input type="radio" id="masculino" name="sexo" value="masculino">
+                                        <label for="masculino">Masculino &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input type="radio" id="femenino" name="sexo" value="femenino">
+                                        <label for="femenino">Femenino</label>
+                                    </div>
+                                </fieldset>     
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="direccion">Direccion:</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="text" id="direccion" name="direccion" placeholder="Tu Direccion...">
+                                </div>
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="estado">Estado:</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <select id="estado" name="estado">
+                                        <option value="aguascalientes">Aguascalientes</option>
+                                        <option value="guanajuato">Guanajuato</option>
+                                        <option value="michoacan" selected>Michoacán</option>
+                                        <option value="yucatan">Yucatan</option>
+                                        <option value="zacatecas">Zacatecas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="e-mail">e-mail:</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="email" id="e-mail" name="e-mail" placeholder="e-mail@dominio.com" required>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">
+                                <div class="formulario-25">
+                                    <label for="telefono">Telefono:</label>
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="tel" id="telefono" name="telefono" placeholder="00-00-00-00-00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">   
+                                <div class="formulario-25"> 
+                                    <legend>Mensaje:</legend>
+                                </div>
+                                    <div class="formulario-75">
+                                    <textarea name="mensaje" style="width:100%; height:8em;" placeholder="Escribe tu mensaje..."></textarea><br>
+                                </div>
+                            </div>
+                            <div class="formulario-fila">   
+                                <div class="formulario-25">
+                                    <input type="submit" value="Enviar">
+                                </div>
+                                <div class="formulario-75">
+                                    <input type="reset" value="Restablecer campos">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <h4>Soy otro subtítulo de la sección principal</h4>
+                        <p>Soy un párrafo de muestra y me repetiré algunas veces, para que puedas apreciar lo que pasa si la página excede la altura de la ventana gráfica.</p>
+                        <p>Creo que ya leíste lo mismo suficientes veces, no te preocupes soy el ultimo párrafo de la sección principal.</p>
+                </main>
+            </div>
+            <!--  SECCIÓN LATERAL DERECHA.  -->
+            <div class="columna-p-12 columna-m-12 columna-g-4 columna-eg-3">
+                <aside id="secundario">
+                    <h3>Soy el título de la sección lateral</h3>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                    <h5>Soy un subtítulo de la sección lateral</h5>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                    <h5>Soy otro subtítulo de la sección lateral</h5>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>De verdad yo soy el ultimo párrafo de muestra</p>
+                </aside>
+            </div>      
+            <!--  PIE DE PAGINA.  -->
+            <div class="columna-p-12 columna-m-12 columna-g-12 columna-eg-12 columna-eeg-12">
+                <footer id="pie-pagina">
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la primera sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la segunda sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la tercera sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>© 2022 RMG - Desarrollo WEB. Todos los derechos reservados.</p>
+                    </div>   
+                </footer> 
+            </div>       
+        <!-- ********** ********** ********** ********** ********** --> 
+        </div>
+        <!--  AQUI TERMINA LA SECCION ADAPTABLE.  -->
+        <!-- ********** ********** ********** ********** ********** -->    
+    </body>
+</html>

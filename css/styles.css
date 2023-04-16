@@ -1,0 +1,513 @@
+/* HOJA DE ESTILOS "PORTAFOLIO PERSONAL DE PROYECTOS" */
+
+/* ********** ********** ********** ********** ********** */
+/*  ESTAS INSTRUCCIONES PERMITEN CAMBIAR LOS COLORES DE FONDO DE TODA LA PAGINA  */
+:root {
+    --fondo_body: hsla(300, 20%, 75%, 0.25);
+    --navegacion_general_1: hsl(90, 75%, 25%);
+    --navegacion_general_2: hsl(90, 85%, 10%);
+    --seccion_bienvenida: hsl(90, 5%, 25%);
+    --navegacion_proyectos_1: hsla(90, 85%, 20%, 0.4);
+    --navegacion_proyectos_2: hsla(90, 85%, 10%, 0.6);
+    --navegacion_proyectos_3: hsl(90, 10%, 55%);
+    --navegacion_proyectos_4: hsl(90, 10%, 25%);
+    --exposicion_proyectos_1: hsla(90, 15%, 75%, 0.5);
+    --exposicion_proyectos_2: hsla(90, 5%, 75%, 0.75);
+    --seccion-contacto: hsl(90, 0%, 15%);
+    --pie-pagina: hsl(90, 0%, 5%);
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A TODO EL CONTENIDO DE LA PAGINA  */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: Tahoma;
+  }
+  
+  body {
+    max-width: 1400px;
+    margin: auto;
+    background-color: var(--fondo_body, hsla(300, 20%, 75%, 0.25));
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A LA NAVEGACION GENERAL.  */
+  #navbar {
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 30rem 1fr 45rem;
+    height: 7rem;
+    width: 100%;
+    max-width: 1400px;
+    background-color: var(--navegacion_general_1, hsl(90, 75%, 25%));
+    z-index: 1;
+  }
+  
+  #logo-rmg-superior {
+    width: 30rem;
+    background-image: url("../iconos/logo_dw_blanco.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left 0.5rem;
+    transition: background-image 2s ease-in-out;
+  }
+  
+  #logo-rmg-superior:hover {
+    background-image: url("../iconos/logo_dw_negro.svg");
+  }
+  
+  #navbar ul {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 15rem);
+    list-style: none;
+  }
+  
+  #navbar a {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  #navbar a:hover {
+    background-color: var(--navegacion_general_2, hsl(90, 85%, 10%));
+    box-shadow: 0 0 0.2rem white;
+  }
+  
+  /*  NAVEGACION GENERAL EN DISPOSITIVOS DE 750px O MENOS.  */
+  @media only screen and (max-width: 750px) {
+    #navbar {
+      grid-template-columns: 30rem 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 14rem;
+    }
+    #navbar ul {
+      grid-template-columns: 1fr repeat(3, 15rem);
+      grid-area: 2 / 1 / 3 / 3;
+      border-top: 0.1rem solid white;
+    }
+  }
+  
+  /*  NAVEGACION GENERAL EN DISPOSITIVOS DE 450px O MENOS.  */
+  @media only screen and (max-width: 450px) {
+    #navbar ul {
+      grid-template-columns: 1fr 12.5rem repeat(2, 10rem);
+      grid-area: 2 / 1 / 3 / 3;
+    }
+    #navbar a {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A LA SECCION BIENVENIDA.  */
+  #welcome-section {
+    display: grid;
+    grid-template-rows: 7rem 1fr 2rem 1fr;
+    height: 100vh;
+    background-color: var(--seccion_bienvenida, hsl(90, 5%, 25%));
+  }
+  
+  h1 {
+    align-self: end;
+    color: #efefef;
+    font-size: 4vw;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  
+  #welcome-section hr {
+    height: 0.5vh;
+    margin: 1rem calc(20%);
+    border: none;
+    background-color: var(--navegacion_general_1, hsl(90, 75%, 25%));
+  }
+  
+  #welcome-section p {
+    align-self: start;
+    color: #ababab;
+    font-size: 2vw;
+    text-align: center;
+  }
+  
+  /*  SECCION BIENVENIDA EN DISPOSITIVOS DE 750px O MENOS.  */
+  @media only screen and (max-width: 750px) {
+    #welcome-section {
+      grid-template-rows: 14rem 1fr 2rem 1fr;
+    }
+    #welcome-section hr {
+      margin: 1rem calc(7%);
+    }
+    h1 {
+      font-size: 6vw;
+    }
+    #welcome-section p {
+      font-size: 3vw;
+    }
+  }
+  
+  /*  SECCION BIENVENIDA EN DISPOSITIVOS DE 1400px O MÁS.  */
+  @media only screen and (min-width: 1400px) {
+    h1 {
+      font-size: 5.7rem;
+    }
+    #welcome-section p {
+      font-size: 2.9rem;
+    }
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A LA SECCION PROYECTOS.  */
+  #projects {
+    display: grid;
+    grid-template-rows: 7rem 7vw 1rem 1fr;
+    background: linear-gradient(
+      102deg,
+      var(--exposicion_proyectos_1, hsla(90, 15%, 75%, 0.5)) 0%,
+      var(--exposicion_proyectos_1, hsla(90, 15%, 75%, 0.5)) 50%,
+      var(--exposicion_proyectos_2, hsla(90, 5%, 75%, 0.75)) 50%,
+      var(--exposicion_proyectos_2, hsla(90, 5%, 75%, 0.75)) 100%
+    );
+  }
+  
+  #projects p {
+    font-size: 2.5vw;
+    align-self: end;
+    text-align: center;
+    font-family: Tahoma;
+    color: var(--navegacion_general_2, hsl(90, 85%, 10%));
+  }
+  
+  #projects hr {
+    height: 0.3vh;
+    margin: 0.5vh calc(15%);
+    border: none;
+    background-color: var(--navegacion_proyectos_1, hsla(90, 85%, 20%, 0.4));
+  }
+  
+  #exposicion {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30rem);
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    gap: 8rem 4rem;
+    margin: 5% 6%;
+  }
+  
+  #projects a {
+    text-decoration: none;
+  }
+  
+  .project-tile {
+    position: relative;
+    padding-bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    background: hsl(90, 0%, 15%);
+    border-radius: 1rem;
+    transition: 1s ease;
+  }
+  
+  .project-tile:hover {
+    transform: scale(105%);
+  }
+  
+  .project-tile img {
+    border-radius: 1rem 1rem 0 0;
+  }
+  
+  .project-tile figcaption {
+    color: white;
+  }
+  
+  .project-tile:hover .contenido-oculto {
+    display: grid;
+  }
+  
+  .contenido-oculto {
+    display: none;
+    position: absolute;
+    align-content: center;
+    top: 30%;
+    left: 5%;
+    height: 40%;
+    width: 90%;
+    padding: 0 2rem;
+    font-family: Arial;
+    font-size: 2rem !important;
+    font-weight: normal;
+    color: black !important;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    z-index: 1;
+  }
+  
+  /*   SECCION PROYECTOS EN DISPOSITIVOS DE 750px O MENOS.  */
+  @media only screen and (max-width: 750px) {
+    #projects {
+      grid-template-rows: 14rem 10vw 1rem 1fr;
+    }
+    #projects p {
+      font-size: 3.5vw;
+    }
+    #projects hr {
+      margin: 0.5vh calc(4%);
+    }
+    #exposicion {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 40rem));
+    }
+  }
+  
+  /*  SECCION PROYECTOS EN DISPOSITIVOS DE 1400px O MÁS.  */
+  @media only screen and (min-width: 1400px) {
+    #projects {
+      grid-template-rows: 7rem 9rem 1rem 1fr;
+    }
+    #projects p {
+      font-size: 3.3rem;
+    }
+    #projects hr {
+      height: 0.5vh;
+    }
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A LA SECCION CONTACTO.  */
+  #seccion-contacto {
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 5rem;
+    height: 90vh;
+    padding-top: 7rem;
+    background-color: var(--seccion-contacto, hsl(90, 0%, 15%));
+    border-bottom: 1rem solid var(--fondo_body, hsla(300, 20%, 75%, 0.25));
+  }
+  
+  #seccion-contacto p {
+    font-size: 2.2vw;
+    align-self: start;
+    text-align: center;
+    color: #efefef;
+  }
+  
+  #seccion-contacto p:first-of-type {
+    font-size: 3.2vw;
+    font-weight: bold;
+    align-self: end;
+  }
+  
+  #medios-contacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    align-items: center;
+    grid-row-gap: 1.5rem;
+    margin: auto 12rem;
+  }
+  
+  #medios-contacto .cuenta {
+    display: grid;
+    grid-template-rows: 3rem 2rem;
+    justify-items: center;
+  }
+  
+  #medios-contacto .cuenta p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+  #medios-contacto .cuenta .iconos {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 3rem;
+    width: 3rem;
+    padding-top: 0.6rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0.5rem white;
+    transition: width 0.5s ease-in-out;
+    text-decoration: none;
+  }
+  
+  #medios-contacto .cuenta .iconos:hover {
+    width: 22rem;
+    box-shadow: 0 0 0.5rem white;
+  }
+  
+  #medios-contacto .cuenta .iconos .nombre-cuenta {
+    display: block;
+    margin-top: -1rem;
+    padding: 1rem 0 0.75rem 1.5rem;
+    color: transparent;
+    font-family: "Arial Narrow";
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-align: center;
+    transition: color 0.25s ease-in-out;
+    transition-delay: 0.15s;
+  }
+  
+  #medios-contacto .cuenta .iconos .nombre-cuenta:hover {
+    color: white;
+  }
+  
+  #profile-link {
+    background-image: url("../iconos/github_mono_c.svg");
+    background-color: rgb(47, 47, 47);
+  }
+  
+  #twitter-pie {
+    background-image: url("../iconos/twitter_color_c.svg");
+    background-color: rgb(29, 155, 240);
+  }
+  
+  #facebook-pie {
+    background-image: url("../iconos/facebook_color_c.svg");
+    background-color: rgb(24, 119, 242);
+  }
+  
+  #whatsapp-pie {
+    background-image: url("../iconos/watsapp_color_c.svg");
+    background-color: rgb(35, 197, 66);
+  }
+  
+  #email-pie {
+    background-image: url("../iconos/email_color_c.svg");
+    background-color: rgb(225, 0, 0);
+  }
+  
+  #logo-RMG-inferior {
+    height: 3.5rem;
+    width: 25rem;
+    margin: 1rem;
+    background-image: url("../iconos/logo_dw_negro.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 0.5rem white;
+    justify-self: end;
+    align-self: end;
+  }
+  
+  /*  SECCION CONTACTO EN DISPOSITIVOS DE 750px O MENOS.  */
+  @media only screen and (max-width: 750px) {
+    #seccion-contacto {
+      grid-template-rows: 2fr 1fr 10fr 5rem;
+      padding-top: 14rem;
+    }
+    #seccion-contacto p {
+      font-size: 2.7vw;
+    }
+    #seccion-contacto p:first-of-type {
+      font-size: 4vw;
+    }
+    #medios-contacto {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      grid-row-gap: 3rem;
+      margin: auto 5rem;
+    }
+    #medios-contacto .cuenta p {
+      font-size: 1.5rem;
+    }
+    #medios-contacto .cuenta .iconos {
+      background-color: transparent;
+      transition: transform 0.5s linear !important;
+    }
+    #medios-contacto .cuenta .iconos:hover {
+      width: 3rem;
+      background-color: transparent;
+      box-shadow: none !important;
+      transform: rotateX(180deg);
+    }
+    #profile-link {
+      background-image: url("../iconos/github_mono_r.svg");
+    }
+    #twitter-pie {
+      background-image: url("../iconos/twitter_mono_r.svg");
+    }
+    #facebook-pie {
+      background-image: url("../iconos/facebook_mono_r.svg");
+    }
+    #whatsapp-pie {
+      background-image: url("../iconos/watsapp_mono_r.svg");
+    }
+    #email-pie {
+      background-image: url("../iconos/email_mono_r.svg");
+    }
+    #medios-contacto .cuenta .iconos .nombre-cuenta {
+      display: none !important;
+    }
+    #profile-link:hover {
+      background-image: url("../iconos/github_color_r_i.svg");
+    }
+    #twitter-pie:hover {
+      background-image: url("../iconos/twitter_color_r_i.svg");
+    }
+    #facebook-pie:hover {
+      background-image: url("../iconos/facebook_color_r_i.svg");
+    }
+    #whatsapp-pie:hover {
+      background-image: url("../iconos/watsapp_rolor_r_i.svg");
+    }
+    #email-pie:hover {
+      background-image: url("../iconos/email_color_r_i.svg");
+    }
+  }
+  
+  /*  SECCION CONTACTO EN DISPOSITIVOS DE 1400px O MÁS.  */
+  @media only screen and (min-width: 1400px) {
+    #seccion-contacto p {
+      font-size: 3.1rem;
+    }
+    #seccion-contacto p:first-of-type {
+      font-size: 5.2rem;
+    }
+    #medios-contacto .cuenta {
+      grid-template-rows: 3rem 2.5rem;
+    }
+    #medios-contacto .cuenta p {
+      font-size: 1.7rem;
+    }
+  }
+  
+  /* ********** ********** ********** ********** ********** */
+  /*  ESTAS INSTRUCCIONES SE APLICAN A LA SECCION PIE DE PAGINA.  */
+  #pie-pagina {
+    display: grid;
+    grid-template-columns: 3fr 2fr 4fr;
+    align-items: center;
+    column-gap: 2rem;
+    height: 10vh;
+    padding: 0.5rem;
+    color: white;
+    background-color: var(--pie-pagina, hsl(90, 0%, 5%));
+  }
+  
+  #pie-pagina p {
+    font-size: 1.4rem;
+    font-family: Arial;
+    text-align: center;
+    color: #bcbcbc;
+  }
+  
+  /*  PIE DE PAGINA EN DISPOSITIVOS DE 600px O MENOS.  */
+  @media only screen and (max-width: 600px) {
+    #pie-pagina p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* ********** ********** ********** ********** ********** */

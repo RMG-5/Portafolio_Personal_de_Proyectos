@@ -1,0 +1,350 @@
+/* HOJA DE ESTILOS "PAGINA DE DESTINO DEL PRODUCTO" */
+
+/* ********** ********** ********** ********** ********** */
+/* INSTRUCCIONES GENERALES. */
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+@font-face{	
+    font-family: 'BalsamiqSans-Regular';
+    src: url('../fuentes/BalsamiqSans-Regular.ttf');
+}
+
+@font-face{	
+    font-family: 'TitanOne-Regular';
+    src: url('../fuentes/TitanOne-Regular.ttf');
+}
+
+html {     
+    position: relative;  
+    background-image: url("../imagenes/logo_bici_75.svg");
+    background-size: contain;
+    background-attachment: fixed; 
+    background-position: center center;   
+    background-repeat: no-repeat;
+    font-size: 62.5%;
+    font-family: 'BalsamiqSans-Regular';
+}
+
+body {    
+    max-width: 1200px;
+    margin: 0 auto; 
+    background: rgba(0, 155, 255, 0.05);     
+}
+
+hr {
+    height: 4rem;
+    margin: 4rem calc(12.5%) -6rem;    
+    background: transparent;
+    border-top: 0.1rem solid rgb(0, 155, 255);
+    border-bottom: 0.1rem solid rgb(0, 155, 255);
+    border-left: none;
+    border-right: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* ********** ********** ********** ********** ********** */
+/* ENCABEZADO. */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 7rem;
+    width: 100%;
+    max-width: 1200px;
+    background: rgb(242, 250, 255);
+    border-bottom: 0.1rem solid rgb(0, 155, 255);    
+    z-index: 1;    
+}
+
+#header-img {
+    padding: 0 1rem;      
+}
+
+#nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+#nav-bar a { 
+    min-width: 13rem;
+    padding: 0 2rem;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;	
+    color: black;
+}
+
+/* ********** ********** ********** ********** ********** */
+/* SECCIÓN BIENVENIDA. */
+
+h1 {
+    padding-top: 9rem;
+    font-family: 'TitanOne-Regular';
+    font-size: 4rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+#subtitulo {
+    font-family: 'TitanOne-Regular';
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#email-label {
+    display: block;
+    margin: 4rem 0 0.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+#email {
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    height: 3.5rem;
+    width: 50%;
+    min-width: 45rem;
+    padding-left: 1rem;
+    border: 0.1rem dotted rgb(0, 155, 255);
+    border-radius: 0.5rem;
+}
+
+#email:focus {
+    background: #f6f6f6;
+    border: 0.1rem solid rgb(0, 155, 255);
+}
+
+#submit {
+    display: block;
+    height: 3.5rem;
+    width: 22.5rem;
+    margin: 1rem auto 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: rgb(0, 155, 255);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: rgb(0, 100, 255);
+}
+
+/* ********** ********** ********** ********** ********** */
+/* SECCIÓN NUESTROS PRODUCTOS. */
+
+#seccion-nuestros_productos {
+    padding-top: 5rem;
+}
+
+h3 {
+    margin: 4rem 12.5% 0;
+    font-size: 2.5rem;
+}
+
+p {
+    margin: 0 12.5%;
+    font-size: 1.8rem; 
+}
+
+.marcas {
+    margin: 0.5rem 15%;
+    font-size: 1.8rem;  
+    list-style: square; 
+}
+
+.marcas:nth-of-type(5) {
+    margin-bottom: 4rem;
+}
+
+/* ********** ********** ********** ********** ********** */
+/* SECCIÓN QUE NADA TE DETENGA. */
+
+#seccion-que_nada_te_detenga {
+    padding-top: 5rem;
+}
+
+h2 {
+    margin: 4rem 12.5% 2rem;
+    font-size: 2.9rem;
+    text-align: center;
+}
+
+#video {
+    display: block;
+    margin: 0 auto 4rem;
+    max-width: 90%;
+}
+
+/* ********** ********** ********** ********** ********** */
+/* SECCIÓN ULTIMAS NOVEDADES. */
+
+#seccion-ultimas_novedades {    
+    padding-top: 5rem;
+}
+
+#ultimas-novedades {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;    
+}
+
+.novedades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40rem;
+    margin: 1rem 4rem 4rem;
+    border: 0.1rem solid rgb(0, 155, 255);
+    border-radius: 0.5rem;  
+}
+
+h4 {
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    background: #dedede
+}
+
+.novedades p {
+    margin: 1rem;
+    font-size: 1.6rem; 
+}
+
+.novedades li {
+    height: 2.5rem;
+    font-size: 1.6rem;
+}
+
+.bicicletas {
+    margin: 1rem 0;
+    border: 0.1rem solid #dedede;    
+    border-radius: 1rem;
+}
+
+.bicicletas:hover {
+    box-shadow: 0 0 1rem #bcbcbc;
+    transform: scale(107%);
+    transition: 1s ease;    
+}
+
+.boton {
+    display: block;
+    height: 3rem;
+    width: 20rem;
+    margin: 1rem auto 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    background: rgb(0, 155, 255);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: rgb(0, 100, 255);
+}
+
+/* ********** ********** ********** ********** ********** */
+/* PÍE DE PÁGINA. */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15rem;
+    background: #2f2f2f;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer a { 
+    min-width: 14rem;
+    padding: 4rem 1rem 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;	
+    color: white;
+}
+
+footer p {
+    margin: 0 5rem 1.5rem 1rem;
+    font-family: monospace;
+    font-size: 1.4rem;
+    text-align: right;
+    color: white;
+}
+
+/* ********** ********** ********** ********** ********** */
+/*  INSTRUCCIONES @media.  */
+
+@media only screen and (max-width: 620px) {
+    #nav-bar a { 
+        min-width: 10rem;
+        padding: 0 1rem;
+        font-size: 1.6rem;
+    }
+    hr {
+        margin: 4rem calc(7.5%) -6rem;    
+    }
+    h3 {
+        margin: 4rem 7.5% 0;
+    }    
+    p {
+        margin: 0 7.5%;
+    }    
+    h2 {
+        margin: 4rem 7.5% 2rem;
+        font-size: 2.5rem;
+    }   
+    footer a { 
+        min-width: 11rem;
+        padding: 3rem 0.5rem 1rem;
+        font-size: 1.3rem;
+    } 
+    footer p {
+           font-size: 1.2rem;
+    }
+}
+
+/* ********** ********** ********** ********** ********** */
+/* LOGO. */
+
+#logo {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    height: 3em;
+    width: 3em;
+    background-image: url("../imagenes/logo_r_mono.svg");
+    background-size: contain;
+    background-position: center;   
+    background-repeat: no-repeat;
+    filter: opacity(50%);
+}
+
+/* ********** ********** ********** ********** ********** */

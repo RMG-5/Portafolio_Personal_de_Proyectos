@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->	
+    <head>
+        <meta charset="UTF-8">
+        <!--  width=device-width - establece el ancho de la página para seguir el ancho de pantalla del dispositivo.  -->
+        <!--  initial-scale=1.0 - establece el nivel de zoom inicial cuando el navegador carga la página por primera vez.  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Modelo básico de sitio web receptivo utilizando una vista de cuadrícula."/>
+        <title>Modelo de Sitio WEB Receptivo</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+<!-- ********** ********** ********** ********** ********** -->
+<!-- ********** ********** ********** ********** ********** -->
+    <body id="index">
+        <!--  ENCABEZADO.  -->
+        <div class="columna-p-12 columna-m-12 columna-g-12 columna-eg-12">
+            <header id="encabezado">
+                <h1>Soy el encabezado principal del sitio WEB</h1>
+            </header>            
+        </div>
+        <!-- ********** ********** ********** ********** ********** -->
+        <!--  AQUI INICIA LA SECCION ADAPTABLE.  --> 
+        <div id="seccion-adaptable">
+        <!-- ********** ********** ********** ********** ********** -->            
+            <!--  BARRA DE NAVEGACION SUPERIOR.  -->
+            <nav id="menu-horizontal">
+                <ul>
+                    <li>
+                        <a href="index.html" class="boton-fijo-01 pagina-activa">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="paginas/parrafos.html" class="boton-fijo-01">SOY FUNCIONAL</a>
+                    </li>
+                    <li class="menu-desple-01">
+                        <a href="#" class="boton-desple-01">DESPLEGABLE</a>
+                            <div class="con-men-desple-01">
+                                <a href="#" class="con-bot-desple-01">SUBMENU A</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU B</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU C</a>
+                            </div>
+                    <li>
+                        <a href="#" class="boton-fijo-01">MENU FIJO</a>
+                    </li>
+                    <li class="menu-desple-01">
+                        <a href="#" class="boton-desple-01">DESPLEGABLE</a>
+                            <div class="con-men-desple-01">
+                                <a href="#" class="con-bot-desple-01">SUBMENU A</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU B</a>
+                                <a href="paginas/formulario.html" class="con-bot-desple-01">SOY FUNCIONAL</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU C</a>
+                                <a href="#" class="con-bot-desple-01">SUBMENU D</a>                        
+                        </div>
+                </ul>
+            </nav>
+            <!--  BARRA DE NAVEGACIÓN LATERAL.  -->
+            <div class="columna-p-4 columna-m-3 columna-g-3 columna-eg-2">
+                <div id="menu-vertical">
+                    <ul>
+                        <li><a href="#">MENU LATERAL 01</a></li>
+                        <li><a href="#">MENU LATERAL 02</a></li>
+                        <li><a href="#">MENU LATERAL 03</a></li>
+                        <li><a href="paginas/tabla.html">SOY FUNCIONAL</a></li>
+                        <li><a href="#">MENU LATERAL 04</a></li>
+                    </ul>
+                </div>
+                <div class="imagen-muestra">Soy una imagen de muestra</div>
+                <div class="imagen-muestra">Soy otra imagen de muestra</div>
+            </div>
+            <!--  SECCIÓN PRINCIPAL.  -->
+            <div class="columna-p-8 columna-m-9 columna-g-5 columna-eg-7">
+                <main id="principal">
+                    <h2>Soy el título de la sección principal</h2>
+                        <div class="alerta">
+                            <p><strong>Importante:</strong></p>
+                            <p> Cuando empecé a realizar el nuevo curso de <strong>Diseño web receptivo</strong>, impartido por <strong>
+                                <a target="_blank" href="https://www.freecodecamp.org/learn">freeCodeCamp</a></strong>, y considerando que 
+                                después de realizar el curso de <strong>Diseño web receptivo heredado</strong>, ya tenía algo de practica 
+                                en el manejo de <em>HTML</em> y <em>CSS</em>, decidí crear un modelo de <em>--Sitio WEB receptivo.--</em></p>
+                            <p>Además de la experiencia adquirida en los cursos de <strong><a target="_blank" href="https://www.freecodecamp.org/learn">
+                                freeCodeCamp</a></strong>, construí este proyecto apoyándome en el contenido sobre diseño web receptivo que encontré en 
+                                el sitio web <strong><a target="_blank" href="https://www.w3schools.com/">www.w3schools.com</a></strong>, por lo que les 
+                                doy las gracias por su excelente material didáctico.</p>
+                        </div>
+                </main>
+            </div>
+            <!--  SECCIÓN LATERAL DERECHA.  -->
+            <div class="columna-p-12 columna-m-12 columna-g-4 columna-eg-3">
+                <aside id="secundario">
+                    <h3>Soy el título de la sección lateral</h3>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                    <h5>Soy un subtítulo de la sección lateral</h5>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                    <h5>Soy otro subtítulo de la sección lateral</h5>
+                        <p>Soy otro párrafo de muestra y también me repetiré algunas veces, para que esta zona no este vacía.</p>
+                        <p>De verdad yo soy el ultimo párrafo de muestra</p>
+                </aside>
+            </div>      
+            <!--  PIE DE PAGINA.  -->
+            <div class="columna-p-12 columna-m-12 columna-g-12 columna-eg-12 columna-eeg-12">
+                <footer id="pie-pagina">
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la primera sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la segunda sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>Soy la tercera sección del pie de página</p>
+                    </div>
+                    <div class="columna-p-12 columna-m-6 columna-g-3 columna-eg-3 seccion-pie">
+                        <p>© 2022 RMG - Desarrollo WEB. Todos los derechos reservados.</p>
+                    </div>   
+                </footer> 
+            </div>       
+        <!-- ********** ********** ********** ********** ********** --> 
+        </div>
+        <!--  AQUI TERMINA LA SECCION ADAPTABLE.  -->
+        <!-- ********** ********** ********** ********** ********** -->    
+    </body>
+</html>
